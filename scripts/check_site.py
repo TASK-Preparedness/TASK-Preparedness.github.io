@@ -32,7 +32,7 @@ class P(HTMLParser):
             self.h1 += 1
         if tag == 'title':
             self.title = True
-        for k in ('href', 'src'):
+        for k in ('href', 'src', 'poster', 'data-poster', 'data-webm', 'data-mp4'):
             if k in a:
                 self.refs.append((tag, k, a[k]))
                 if tag in ('script', 'img', 'iframe') or (tag == 'link' and a.get('rel') in ('stylesheet', 'icon')):

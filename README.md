@@ -19,11 +19,13 @@ The circular badge in the header, home hero, favicon, Apple touch icon and socia
 
 The home and Build List pages include a photograph of Joshua Sturtz's T.A.S.K. development station. Published copies have all EXIF and other metadata stripped. A short strip of the display was blurred to hide a local username and hostname in a terminal window title; the photograph is otherwise unedited.
 
+The home page also includes a 30-second landscape promotional video (an AI-generated concept ad, not footage of a validated physical build). Compact 720p H.264 and VP9 versions, with a captions file, sit in `assets/video/`. The hero can play a muted, looping, text-free background cut on wide viewports when the visitor has not requested reduced motion or data saving; otherwise a still poster is shown. The full ad, with sound, is in a separate player further down the page and never autoplays.
+
 ## Pages
 
 | File | Purpose |
 |---|---|
-| `index.html` | Home: headline, READ FIRST warnings, Download CTA, launcher tile grid, commitments |
+| `index.html` | Home: headline, READ FIRST warnings, Download CTA, station photo, concept promo, launcher tile grid, commitments |
 | `download.html` | Release files (size, SHA-256), `sha256sum -c` verification, requirements, install/uninstall |
 | `build.html` | Hardware configurator / Build List: Starter, Comms and Field parts, prices, checklist |
 | `docs.html` | Getting started and a map of the repository docs |
