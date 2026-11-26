@@ -7,14 +7,34 @@
 <meta name="description" content="Build your own T.A.S.K. station: a Raspberry Pi 5 parts list with typical November 2026 prices, checklists, and honest hardware status from the project docs.">
 <meta name="color-scheme" content="dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0B0D10">
+<link rel="canonical" href="https://task-preparedness.github.io/build.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T.A.S.K.">
+<meta property="og:title" content="Build List — T.A.S.K. hardware configurator">
+<meta property="og:description" content="Build your own T.A.S.K. station: a Raspberry Pi 5 parts list with typical November 2026 prices, checklists, and honest hardware status from the project docs.">
+<meta property="og:url" content="https://task-preparedness.github.io/build.html">
+<meta property="og:image" content="https://task-preparedness.github.io/assets/img/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Official T.A.S.K. logo: a circular badge with a radio tower, the name T.A.S.K., and field gear.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build List — T.A.S.K. hardware configurator">
+<meta name="twitter:description" content="Build your own T.A.S.K. station: a Raspberry Pi 5 parts list with typical November 2026 prices, checklists, and honest hardware status from the project docs.">
+<meta name="twitter:image" content="https://task-preparedness.github.io/assets/img/og-image.jpg">
+<meta name="twitter:image:alt" content="Official T.A.S.K. logo: a circular badge with a radio tower, the name T.A.S.K., and field gear.">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/img/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="assets/img/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" sizes="180x180">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="index.html" aria-label="T.A.S.K., Tactical Access Support Kit, home"><img src="assets/img/task-mark.svg" width="40" height="40" alt=""><span><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></span></a>
+<a class="brand" href="index.html" aria-label="T.A.S.K., Tactical Access Support Kit, home"><picture><source type="image/webp" srcset="assets/img/logo-64.webp 64w, assets/img/logo-128.webp 128w" sizes="48px"><img class="brand-logo" src="assets/img/logo-64.png" srcset="assets/img/logo-64.png 64w, assets/img/logo-128.png 128w" sizes="48px" width="48" height="48" alt=""></picture><span><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></span></a>
 <nav class="nav-wide" aria-label="Primary"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="index.html#capabilities">Features</a></li><li><a href="download.html">Download</a></li><li><a href="build.html" aria-current="page">Build List</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support</a></li><li><a class="ext" href="https://github.com/TASK-Preparedness/TASK">GitHub</a></li></ul></nav>
 <details class="nav-menu">
 <summary><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span> Menu</summary>
@@ -30,26 +50,9 @@
 </div></section>
 
 <section class="section" id="configurator" data-default-build="comms"><div class="wrap">
-<figure class="photo-slot" style="margin:0 0 1.5rem">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" role="img" aria-label="Illustration of a Raspberry Pi-sized board, a USB radio node, an SDR dongle and a GPS receiver — not a product photograph." width="960" height="280">
-<rect width="960" height="280" rx="16" fill="#0B0D10"/>
-<rect x="1" y="1" width="958" height="278" rx="15" fill="none" stroke="#2A2F36"/>
-<rect x="48" y="50" width="280" height="180" rx="12" fill="#15181D" stroke="#2A2F36"/>
-<circle cx="72" cy="74" r="6" fill="#3FB950"/>
-<circle cx="92" cy="74" r="6" fill="#D29922"/>
-<circle cx="112" cy="74" r="6" fill="#F85149"/>
-<rect x="64" y="100" width="200" height="14" rx="3" fill="#1B1F25"/>
-<rect x="64" y="128" width="248" height="70" rx="6" fill="#1B1F25" stroke="#2A2F36"/>
-<text x="72" y="170" fill="#9AA0A6" font-family="Inter, Noto Sans, sans-serif" font-size="14">Raspberry Pi 5</text>
-<rect x="360" y="80" width="140" height="90" rx="8" fill="#15181D" stroke="#2A2F36"/>
-<text x="372" y="132" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="13">Meshtastic</text>
-<rect x="530" y="100" width="90" height="50" rx="6" fill="#15181D" stroke="#2A2F36"/>
-<text x="548" y="130" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="13">SDR</text>
-<rect x="650" y="90" width="70" height="70" rx="35" fill="#15181D" stroke="#2A2F36"/>
-<text x="662" y="130" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="12">GPS</text>
-<text x="360" y="230" fill="#8B949E" font-family="Inter, Noto Sans, sans-serif" font-size="13">Illustration only — replace this area with a photo of your own build if you wish.</text>
-</svg>
-<figcaption>Illustration only. A third-party product photograph is not used here; this space can take a photo of your own station later.</figcaption>
+<figure class="photo-slot photo-slot--portrait" style="margin:0 0 1.5rem">
+<picture><source type="image/webp" srcset="assets/img/station-480.webp 480w, assets/img/station-768.webp 768w, assets/img/station-1152.webp 1152w" sizes="(min-width: 40rem) 32rem, calc(100vw - 2.3rem)"><img src="assets/img/station-768.jpg" srcset="assets/img/station-480.jpg 480w, assets/img/station-768.jpg 768w, assets/img/station-1152.jpg 1152w" sizes="(min-width: 40rem) 32rem, calc(100vw - 2.3rem)" width="1152" height="1536" alt="Joshua&#x27;s T.A.S.K. development station: a tan hard case with a display running the T.A.S.K. launcher, a Logitech keyboard, and a panel of switches and antenna connectors." loading="lazy" decoding="async"></picture>
+<figcaption>Joshua&rsquo;s T.A.S.K. development station — one example of a case build. Your parts and layout can differ.</figcaption>
 </figure>
 
 <div class="seg" role="tablist" aria-label="Recommended builds">
@@ -177,7 +180,7 @@
 <button type="button" class="btn small" data-select-build="field" aria-pressed="false">Select Field</button>
 </article>
 </div>
-<p class="muted">Starter totals $309–$450; Field totals $452–$755. The large figure above follows the tab you have selected (default: Comms).</p>
+<p class="muted">Starter totals $309–$450; Field totals $452–$755. The photo above is Joshua&rsquo;s development station, shown as an example. It does not change with the tab (default: Comms).</p>
 </div></section>
 
 <section class="section alt" id="optional"><div class="wrap">

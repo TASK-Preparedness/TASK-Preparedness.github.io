@@ -13,6 +13,12 @@ The look follows the official launcher palette in `launcher/task_launcher/theme.
 
 This tree is the GitHub Pages source (GitHub Actions workflow in `.github/workflows/pages.yml`). There is no site-code license yet; Joshua Sturtz has not chosen one.
 
+## Logo and photographs
+
+The circular badge in the header, home hero, favicon, Apple touch icon and social preview is the official T.A.S.K. logo. It is a T.A.S.K. trademark. Use of the name and logo is governed by the project's trademark policy in [`TRADEMARK.md`](https://github.com/TASK-Preparedness/TASK/blob/main/TRADEMARK.md) in the software repository. The artwork is published here only as resized, compressed derivatives (WebP and PNG, plus a 1200×630 JPEG social preview on the site background). The original file is not in this repository, and the mark itself is not recoloured or redrawn.
+
+The home and Build List pages include a photograph of Joshua Sturtz's T.A.S.K. development station. Published copies have all EXIF and other metadata stripped. A short strip of the display was blurred to hide a local username and hostname in a terminal window title; the photograph is otherwise unedited.
+
 ## Pages
 
 | File | Purpose |

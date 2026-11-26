@@ -61,7 +61,8 @@ code, kbd, pre { font-family: var(--mono); font-size: 0.9em; }
 .site-header { background: var(--bg); border-bottom: 1px solid var(--divider); position: sticky; top: 0; z-index: 50; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding-top: 0.7rem; padding-bottom: 0.7rem; }
 .brand { text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 0.7rem; min-height: 44px; }
-.brand svg, .brand img { width: 40px; height: 40px; flex-shrink: 0; }
+.brand picture, .brand img, .brand svg { width: 48px; height: 48px; flex-shrink: 0; display: block; }
+.brand img { border-radius: 50%; }
 .brand strong { display: block; font-size: 1.2rem; letter-spacing: 0.06em; font-weight: 800; line-height: 1.1; }
 .brand span { display: block; font-size: 0.72rem; color: var(--text2); }
 .nav-menu { margin: 0; }
@@ -154,11 +155,19 @@ main { display: block; }
 .motto li { margin: 0; }
 .section.motto-wrap { padding: 0; background: var(--surface); }
 
+/* Official logo in the home hero, above the headline */
+.hero-mark { display: block; width: 8.5rem; height: 8.5rem; margin: 0 0 1.1rem; }
+.hero-mark img { width: 8.5rem; height: 8.5rem; display: block; border-radius: 50%; }
+@media (max-width: 40rem) {
+  .hero-mark, .hero-mark img { width: 6.5rem; height: 6.5rem; }
+}
+
 /* Hero figure / photo slot */
 .hero-figure { margin: 2rem 0 0; }
-.photo-slot { background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); overflow: hidden; }
-.photo-slot figcaption { padding: 0.7rem 1rem 0.9rem; color: var(--muted); font-size: 0.88rem; }
-.photo-slot figcaption { margin: 0; }
+.photo-slot { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.photo-slot figcaption { padding: 0.7rem 1rem 0.9rem; color: var(--muted); font-size: 0.88rem; margin: 0; }
+.photo-slot--portrait { background: var(--bg); text-align: center; }
+.photo-slot--portrait img { display: block; width: 100%; height: auto; margin: 0 auto; max-width: 32rem; }
 
 /* Tables */
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
