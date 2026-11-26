@@ -2,7 +2,7 @@
 
 Static download and hardware-build site for [T.A.S.K.](https://github.com/TASK-Preparedness/TASK)
 (Tactical Access Support Kit). Plain HTML, one CSS file and a little optional JavaScript.
-No build step, no framework, no third-party requests, no trackers, no cookies, no CDNs.
+No build step, no framework, no cookies, no advertising or cross-site trackers. Anonymous page views are counted with [GoatCounter](https://www.goatcounter.com/). The download page may request the GitHub API for newer releases.
 Suited to GitHub Pages.
 
 The look follows the official launcher palette in `launcher/task_launcher/theme.py`
@@ -29,7 +29,7 @@ The home page also includes a 30-second landscape promotional video (an AI-gener
 | `download.html` | Release files (size, SHA-256), `sha256sum -c` verification, requirements, install/uninstall |
 | `build.html` | Hardware configurator / Build List: Starter, Comms and Field parts, prices, checklist |
 | `docs.html` | Getting started and a map of the repository docs |
-| `about.html` | Safety summary, GPL license, trademark policy summary, source location |
+| `about.html` | Safety summary, GPL license, trademark policy summary, source location, site privacy note |
 | `support.html` | Issue templates, private security reporting, contributing, Buy Me a Coffee |
 | `404.html` | Self-contained not-found page (links to `/`; edit if hosted under a sub-path) |
 
@@ -60,7 +60,7 @@ The page works without JavaScript; totals and persistence need it.
 ## Checks
 
 ```
-python3 scripts/check_site.py          # offline: local links, anchors, h1/title/lang, warnings, no external resources
+python3 scripts/check_site.py          # offline: local links, anchors, h1/title/lang, warnings, no unexpected external resources
 bash scripts/verify_downloads.sh       # anonymous: every download URL is HTTP 200, size and SHA-256 match
 python3 -m http.server 8765            # preview at http://localhost:8765/
 ```
