@@ -1,16 +1,11 @@
 # GitHub Pages deployment for the T.A.S.K. website.
-#
-# READY BUT UNUSED: this workflow only runs when started by hand
-# (Actions -> "Deploy website to GitHub Pages" -> Run workflow), and only
-# after Pages has been enabled for the repository with Source = "GitHub Actions"
-# (Settings -> Pages). Nothing here has been pushed or enabled yet.
-#
-# To deploy on every push to main instead, add under `on:`:
-#   push:
-#     branches: [main]
+# Source is GitHub Actions (Settings -> Pages). This is the org site at
+# https://taskpreparedness.github.io/
 name: Deploy website to GitHub Pages
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -32,8 +27,7 @@ jobs:
       - name: Assemble site (publish only the site files)
         run: |
           mkdir _site
-          cp -r index.html download.html build.html docs.html about.html support.html 404.html .nojekyll assets _site/
-          test -f robots.txt && cp robots.txt _site/ || true
+          cp -r index.html download.html build.html docs.html about.html support.html 404.html .nojekyll assets robots.txt sitemap.xml _site/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

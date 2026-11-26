@@ -8,7 +8,10 @@ Suited to GitHub Pages.
 The look follows the official launcher palette in `launcher/task_launcher/theme.py`
 (`#0B0D10` background, `#15181D` tiles, `#4CC2FF` accent, `#3FB950` / `#D29922` status).
 
-**Status: local draft. Nothing here has been pushed, published or enabled.**
+**Live site:** <https://taskpreparedness.github.io/>  
+**Repository:** <https://github.com/TASK-Preparedness/TASK-Preparedness.github.io>
+
+This tree is the GitHub Pages source (GitHub Actions workflow in `.github/workflows/pages.yml`). There is no site-code license yet; Joshua Sturtz has not chosen one.
 
 ## Pages
 
@@ -54,7 +57,6 @@ bash scripts/verify_downloads.sh       # anonymous: every download URL is HTTP 2
 python3 -m http.server 8765            # preview at http://localhost:8765/
 ```
 
-## Deployment (not done)
+## Deployment
 
-`.github/workflows/pages.yml` deploys the site files with the official Pages actions. It runs only by hand
-(`workflow_dispatch`) and only works after Pages is enabled with Source = GitHub Actions.
+`.github/workflows/pages.yml` deploys the site files with the official Pages actions on every push to `main`, and can also be started by hand (`workflow_dispatch`). Pages source is GitHub Actions.
