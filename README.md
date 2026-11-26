@@ -8,7 +8,7 @@ Suited to GitHub Pages.
 The look follows the official launcher palette in `launcher/task_launcher/theme.py`
 (`#0B0D10` background, `#15181D` tiles, `#4CC2FF` accent, `#3FB950` / `#D29922` status).
 
-**Live site:** <https://taskpreparedness.github.io/>  
+**Live site:** <https://task-preparedness.github.io/>  
 **Repository:** <https://github.com/TASK-Preparedness/TASK-Preparedness.github.io>
 
 This tree is the GitHub Pages source (GitHub Actions workflow in `.github/workflows/pages.yml`). There is no site-code license yet; Joshua Sturtz has not chosen one.

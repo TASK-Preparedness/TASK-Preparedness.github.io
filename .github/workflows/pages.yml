@@ -1,6 +1,6 @@
 # GitHub Pages deployment for the T.A.S.K. website.
 # Source is GitHub Actions (Settings -> Pages). This is the org site at
-# https://taskpreparedness.github.io/
+# https://task-preparedness.github.io/
 name: Deploy website to GitHub Pages
 
 on:
