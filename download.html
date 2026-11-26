@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download T.A.S.K. — releases, checksums and install steps</title>
+<meta name="description" content="Download the T.A.S.K. experimental alpha, verify SHA-256 checksums with sha256sum -c, and follow the install steps for a spare-card Raspberry Pi 5 on Debian 13 trixie arm64.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html" aria-label="T.A.S.K. home"><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></a>
+<nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="download.html" aria-current="page">Download</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support &amp; contribute</a></li></ul></nav>
+</div></header>
+<main id="main">
+<section class="page-head"><div class="wrap">
+<h1>Download T.A.S.K.</h1>
+<p class="lead">Latest release: <strong data-rel="tag">v0.1.0-alpha.1</strong>, an experimental <span data-rel="kind">pre-release</span> published <span data-rel="date">November 25, 2026 (UTC)</span>. <a data-rel="notes" href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes on GitHub</a>.</p>
+<section class="readfirst" aria-labelledby="readfirst-h" id="read-first">
+<h2 id="readfirst-h">&#9888;&#65039; READ FIRST &mdash; experimental alpha, safety and radio warnings</h2>
+<ul>
+<li><strong>EXPERIMENTAL ALPHA &mdash; NOT VALIDATED ON A PHYSICAL RASPBERRY PI.</strong> The public packages, installer and source tree have not been installed or accepted on a clean physical Raspberry Pi. Treat every package and every asset as experimental. Do not rely on T.A.S.K. as your only tool in a real emergency. It is not a substitute for emergency services.</li>
+<li><strong>RECEIVE-ONLY BY DEFAULT.</strong> T.A.S.K. must never transmit on any radio unless a licensed operator explicitly tells it to. Amateur transmit stays disabled until you enter your own licensed callsign. Transmit-capable features are experimental. <strong>Do not transmit if you are not licensed and allowed to.</strong> You are responsible for knowing the law where you are.</li>
+<li><strong>NO AUTOMATIC INSTALL, FIRMWARE FLASHING OR SERVICE START.</strong> The installer is a dry run only. It never flashes firmware, never takes control of your radios, and never starts anything automatically.</li>
+<li><strong>UNVERIFIED &mdash; REQUIRES PHYSICAL HARDWARE TEST.</strong> Any radio, GPS, SDR, board or feature not listed as tested in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a> carries this label. Test on a spare SD card, never on a working system.</li>
+</ul>
+<p>Read <a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md">SAFETY.md</a> and <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a> before you install anything. See also the <a href="about.html#safety">safety summary on this site</a>.</p>
+</section>
+<ul class="toc"><li><a href="#files">Files</a></li><li><a href="#verify">Verify</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#install">Install steps</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#source">Source</a></li></ul>
+</div></section>
+
+<section class="section" id="files"><div class="wrap">
+<div id="release" data-page-tag="v0.1.0-alpha.1">
+<h2>Release files</h2>
+<p><strong>Every asset in this pre-release is experimental and has not been validated on a physical Raspberry Pi.</strong> Verify before unpacking (see <a href="#verify">below</a>). All files come from the project&rsquo;s GitHub release page; this site does not host any binaries.</p>
+<div id="newer-notice" class="notice-newer" role="status" hidden>
+<p><strong>A newer release exists: <span data-rel="newtag"></span>.</strong> The install steps and checksums further down this page were written for <span data-rel="pagetag"></span>. For the newer release, follow the release notes and the <code>INSTALL.md</code> that ship with it, and verify with its own <code>SHA256SUMS</code>.</p>
+</div>
+<ul class="assets" id="asset-list">
+<li class="asset primary" data-name="TASK-volunteer-test-debs-20261123.zip">
+<div><h3>TASK-volunteer-test-debs-20261123.zip</h3><p>Ten experimental Debian packages (arm64 target) plus the volunteer testing guide and their own SHA256SUMS. This is the one to install on a spare-card Raspberry Pi 5.</p></div>
+<div class="actions"><a class="btn" href="https://github.com/TASK-Preparedness/TASK/releases/download/v0.1.0-alpha.1/TASK-volunteer-test-debs-20261123.zip" aria-label="Download TASK-volunteer-test-debs-20261123.zip">Download</a></div>
+<div class="meta"><span>Size: 859,549 bytes</span><span>SHA-256: <span class="hash">ba50f7de2e599023e60f0c186a9de144a708ffd6ff83c88a61ee0f508a0fbf4e</span> <button type="button" class="btn secondary small" data-copy-text="ba50f7de2e599023e60f0c186a9de144a708ffd6ff83c88a61ee0f508a0fbf4e" aria-label="Copy SHA-256 of TASK-volunteer-test-debs-20261123.zip">Copy</button></span></div>
+</li>
+<li class="asset" data-name="TASK-0.1.0-alpha.1-source.tar.gz">
+<div><h3>TASK-0.1.0-alpha.1-source.tar.gz</h3><p>Complete corresponding source tree at the release tag, as a tar.gz.</p></div>
+<div class="actions"><a class="btn" href="https://github.com/TASK-Preparedness/TASK/releases/download/v0.1.0-alpha.1/TASK-0.1.0-alpha.1-source.tar.gz" aria-label="Download TASK-0.1.0-alpha.1-source.tar.gz">Download</a></div>
+<div class="meta"><span>Size: 2,486,637 bytes (2.49 MB)</span><span>SHA-256: <span class="hash">217c7285087f67b0dffbe0a762ce54ab66fd9146cc48c6c2f4f69507796606bc</span> <button type="button" class="btn secondary small" data-copy-text="217c7285087f67b0dffbe0a762ce54ab66fd9146cc48c6c2f4f69507796606bc" aria-label="Copy SHA-256 of TASK-0.1.0-alpha.1-source.tar.gz">Copy</button></span></div>
+</li>
+<li class="asset" data-name="TASK-0.1.0-alpha.1-source.zip">
+<div><h3>TASK-0.1.0-alpha.1-source.zip</h3><p>The same source tree as a zip.</p></div>
+<div class="actions"><a class="btn" href="https://github.com/TASK-Preparedness/TASK/releases/download/v0.1.0-alpha.1/TASK-0.1.0-alpha.1-source.zip" aria-label="Download TASK-0.1.0-alpha.1-source.zip">Download</a></div>
+<div class="meta"><span>Size: 3,023,164 bytes (3.02 MB)</span><span>SHA-256: <span class="hash">2c2a3a404bde16c94116f7907abd8ab19b3bacca42e52f256204301fd5416b20</span> <button type="button" class="btn secondary small" data-copy-text="2c2a3a404bde16c94116f7907abd8ab19b3bacca42e52f256204301fd5416b20" aria-label="Copy SHA-256 of TASK-0.1.0-alpha.1-source.zip">Copy</button></span></div>
+</li>
+<li class="asset" data-name="SHA256SUMS">
+<div><h3>SHA256SUMS</h3><p>Checksums of the three files above. Download it next to them and run sha256sum -c SHA256SUMS.</p></div>
+<div class="actions"><a class="btn" href="https://github.com/TASK-Preparedness/TASK/releases/download/v0.1.0-alpha.1/SHA256SUMS" aria-label="Download SHA256SUMS">Download</a></div>
+<div class="meta"><span>Size: 299 bytes</span><span>SHA-256: <span class="hash">4f6db85504c36e0ea29bd7f603f1c306b256d54bf0fc179699843cf3f832115b</span> <button type="button" class="btn secondary small" data-copy-text="4f6db85504c36e0ea29bd7f603f1c306b256d54bf0fc179699843cf3f832115b" aria-label="Copy SHA-256 of SHA256SUMS">Copy</button></span></div>
+</li>
+</ul>
+<p class="muted" id="release-status" role="status" aria-live="polite">Showing built-in release data for v0.1.0-alpha.1. If JavaScript is available, this page checks the GitHub API for newer releases.</p>
+</div>
+<div class="note"><p><strong>Which one do I want?</strong> To test on a Raspberry Pi 5, download <code>TASK-volunteer-test-debs-20261123.zip</code> and <code>SHA256SUMS</code>. To read, build or review the code, download a source archive (or clone the repository at tag <code>v0.1.0-alpha.1</code>). There is no Windows build, no installer image and no Pi 4 / 3 / Zero support in this alpha.</p></div>
+</div></section>
+
+<section class="section alt" id="verify"><div class="wrap">
+<h2>Verify your download</h2>
+<p>Do this before you unpack or install anything. Put the files you downloaded and <code>SHA256SUMS</code> in the same folder, open a terminal there, and run:</p>
+<div class="codeblock"><pre><code>sha256sum -c SHA256SUMS</code></pre></div>
+
+<p class="expect">Every file listed must print <code>OK</code>. If any file prints <code>FAILED</code>, do not use it: download it again, or stop and file an <a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">installation-problem issue</a>. If you downloaded only some of the files, <code>sha256sum</code> will also complain about the missing ones; the GNU option <code>--ignore-missing</code> skips them.</p>
+<p>No <code>SHA256SUMS</code> file handy? Compare a single file by eye with the values above:</p>
+<div class="codeblock"><pre><code>sha256sum TASK-volunteer-test-debs-20261123.zip</code></pre></div>
+
+<p class="expect">The 64-character value must match <strong>exactly</strong>:<br><span class="hash">ba50f7de2e599023e60f0c186a9de144a708ffd6ff83c88a61ee0f508a0fbf4e</span></p>
+<p>Checksums protect against corrupted or tampered downloads. They are not a guarantee that the software is safe or validated: it is an experimental alpha.</p>
+<h3>Inside the packages zip</h3>
+<p>After unzipping, the <code>task-volunteer-test</code> folder has its own <code>SHA256SUMS</code> covering the ten <code>.deb</code> files. Check them from inside that folder with <code>sha256sum -c SHA256SUMS</code>; you want ten lines ending in <code>OK</code> and no <code>FAILED</code>.</p>
+<details><summary>Show the ten package checksums</summary>
+<div class="table-wrap" style="margin-top:.6rem"><table><thead><tr><th scope="col">Package file</th><th scope="col">SHA-256</th></tr></thead><tbody><tr><th scope="row"><code>python3-task-comms_0.3.1_all.deb</code></th><td><span class="hash">8956231817cbfe2dd0f285fe5b84b5df4abd408c8e00af40f3a5996d6e4b09e4</span></td></tr><tr><th scope="row"><code>task-core_0.3.0_all.deb</code></th><td><span class="hash">a48197329d50197f62cf8b4db87963b4d57c275ba587a2ae5a1b12627385f5e1</span></td></tr><tr><th scope="row"><code>task-core-compat_0.3.0_all.deb</code></th><td><span class="hash">3ec1bbfb4b63e55fe73d236d76b8cc2d561c32d8a0883327f718a1486df95da0</span></td></tr><tr><th scope="row"><code>task-console_0.2.1~alpha1_all.deb</code></th><td><span class="hash">a150b01d34733d1de6b124ae1827238c07a680db75b312209ae428f84a77ddfd</span></td></tr><tr><th scope="row"><code>task-aprs_0.1.0_all.deb</code></th><td><span class="hash">640604311eaf3a60e1992a2d3a3459149191a9aee1b621d001a9cb2f05c3a283</span></td></tr><tr><th scope="row"><code>task-sdr_0.2.4_all.deb</code></th><td><span class="hash">5bcec72059da184e2a6e53d18f21d2d504a9c143a5234cec86f4801493236a82</span></td></tr><tr><th scope="row"><code>task-mesh_0.3.2~alpha1_all.deb</code></th><td><span class="hash">1f3bd20de4152e01d8cc2c96bd5a045914b2f152413b832fa62356cc78319e76</span></td></tr><tr><th scope="row"><code>task-launcher_0.3.8_all.deb</code></th><td><span class="hash">a8771804ba7d99fc7d2cb78a0ee99a989a343381ff6436c7f43865e223a5e440</span></td></tr><tr><th scope="row"><code>task-maps_0.1.1_all.deb</code></th><td><span class="hash">e45652d283c2b9abb94113b618073784beb3a4200e58e2bcaf268e0a512d5b0d</span></td></tr><tr><th scope="row"><code>task-resources_0.2.4_all.deb</code></th><td><span class="hash">064aa332db0de2e52e82891f4ab295972331758e91e269ddd32aa6b90cd457e5</span></td></tr></tbody></table></div>
+</details>
+</div></section>
+
+<section class="section" id="requirements"><div class="wrap">
+<h2>System requirements</h2>
+<div class="grid cols-2">
+<div class="card"><h3>What you need</h3>
+<ul>
+<li>A <strong>Raspberry Pi 5</strong> &mdash; this alpha&rsquo;s only requested test board.</li>
+<li><strong>Debian 13 &ldquo;trixie&rdquo; arm64</strong>, or Raspberry Pi OS 64-bit based on trixie, with a desktop session.</li>
+<li>A <strong>spare SD card</strong> (recommended) and a way to flash a clean OS image onto it.</li>
+<li>About 300 MB free space, plus room for any maps, ZIM files or libraries you add yourself.</li>
+<li>Internet access for the install: apt downloads the Debian dependencies, which include Qt and are several hundred MB.</li>
+</ul></div>
+<div class="card"><h3>What is not supported</h3>
+<ul>
+<li>Pi 4 / 400 / 3, Zero 2 W and other boards are not part of this test call (see <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a>).</li>
+<li>32-bit operating systems and Debian 12 or older.</li>
+<li><strong>Windows</strong> &mdash; no build, nothing tested.</li>
+<li>A Pi that already runs T.A.S.K. or R.A.I.N. &mdash; use a fresh card instead.</li>
+<li>A fully offline install &mdash; not part of this alpha (see <a href="https://github.com/TASK-Preparedness/TASK/blob/main/OFFLINE.md">OFFLINE.md</a>).</li>
+</ul></div>
+</div>
+</div></section>
+
+<section class="section alt" id="install"><div class="wrap">
+<h2>Install steps (volunteer test round 1)</h2>
+<div class="readfirst compact"><p><strong>Use a spare SD card. Do not install this on a production system or on a Pi you cannot afford to rebuild.</strong> For this round, do <strong>not</strong> connect any radio, Meshtastic node, SDR or GPS, and do not enable any transmit setting: it tests install, start and removal only. The installer in the source tree is a dry run only; installs are done by hand with <code>apt</code>.</p></div>
+<p>These steps follow <a href="https://github.com/TASK-Preparedness/TASK/blob/main/docs/VOLUNTEER-TESTING.md">docs/VOLUNTEER-TESTING.md</a> (the commands exercised in an emulated arm64 chroot) and the longer reference, <a href="https://github.com/TASK-Preparedness/TASK/blob/main/INSTALL.md">INSTALL.md</a>. Run <strong>one command at a time</strong> and wait for it to finish. Log in as your normal user, not root.</p>
+<ol class="steps">
+<li><h3>Check your Pi</h3>
+<div class="codeblock"><pre><code>cat /proc/device-tree/model; echo</code></pre></div>
+<p class="expect">Expected: <code>Raspberry Pi 5 Model B Rev &hellip;</code></p>
+
+<div class="codeblock"><pre><code>dpkg --print-architecture</code></pre></div>
+<p class="expect">Expected: <code>arm64</code></p>
+
+<div class="codeblock"><pre><code>grep VERSION_CODENAME /etc/os-release</code></pre></div>
+<p class="expect">Expected: <code>VERSION_CODENAME=trixie</code></p>
+
+<div class="codeblock"><pre><code>dpkg -l &#x27;task-*&#x27; &#x27;rain-*&#x27; 2&gt;/dev/null | grep &#x27;^ii&#x27;</code></pre></div>
+<p class="expect">Expected: <strong>no output</strong>. If anything is listed, stop and use a fresh card.</p>
+
+<p>If the architecture is not <code>arm64</code> or the OS is not 13/trixie, stop: this alpha is not for that system.</p></li>
+<li><h3>Download and verify</h3>
+<p>Download <code>TASK-volunteer-test-debs-20261123.zip</code> and <code>SHA256SUMS</code> from the <a href="#files">files above</a> into your home folder, then:</p>
+<div class="codeblock"><pre><code>cd ~</code></pre></div>
+
+<div class="codeblock"><pre><code>sha256sum -c SHA256SUMS</code></pre></div>
+<p class="expect">Expected: <code>OK</code> for each file you downloaded (add <code>--ignore-missing</code> if you did not download them all). On any <code>FAILED</code>, stop and report it.</p>
+</li>
+<li><h3>Unpack and verify the ten packages</h3>
+<div class="codeblock"><pre><code>unzip TASK-volunteer-test-debs-20261123.zip</code></pre></div>
+
+<div class="codeblock"><pre><code>cd task-volunteer-test</code></pre></div>
+
+<div class="codeblock"><pre><code>sha256sum -c SHA256SUMS</code></pre></div>
+<p class="expect">Expected: ten lines ending in <code>OK</code> and no <code>FAILED</code>.</p>
+</li>
+<li><h3>Install</h3>
+<div class="codeblock"><pre><code>sudo apt update</code></pre></div>
+
+<p>Then this <strong>one</strong> command, all on one line:</p>
+<div class="codeblock"><pre><code>sudo apt install ./python3-task-comms_0.3.1_all.deb ./task-core_0.3.0_all.deb ./task-core-compat_0.3.0_all.deb ./task-launcher_0.3.8_all.deb ./task-console_0.2.1~alpha1_all.deb ./task-mesh_0.3.2~alpha1_all.deb ./task-maps_0.1.1_all.deb ./task-aprs_0.1.0_all.deb ./task-sdr_0.2.4_all.deb ./task-resources_0.2.4_all.deb</code></pre></div>
+
+<p>apt lists what it will install and asks <code>Do you want to continue? [Y/n]</code>. Answer <code>Y</code>. Keep the full output for your report, especially any lines starting with <code>E:</code> or <code>W:</code>.</p>
+<p class="muted"><code>task-mesh</code> 0.3.2~alpha1 Recommends <code>pulseaudio-utils</code> (for <code>paplay</code>, used by the audible mesh alert), so apt will offer to install it if it is missing. See <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a>. These packages do not enable or start any systemd service and do not flash firmware.</p></li>
+<li><h3>Check the installation</h3>
+<div class="codeblock"><pre><code>dpkg-query -W -f=&#x27;${Package} ${Version} ${db:Status-Abbrev}\n&#x27; python3-task-comms task-core task-core-compat task-launcher task-console task-mesh task-maps task-aprs task-sdr task-resources</code></pre></div>
+<p class="expect">Expected: ten lines, each ending in <code>ii</code>.</p>
+
+<div class="codeblock"><pre><code>sudo dpkg --verify python3-task-comms task-core task-core-compat task-launcher task-console task-mesh task-maps task-aprs task-sdr task-resources</code></pre></div>
+<p class="expect">Expected: <strong>no output</strong>.</p>
+
+<div class="codeblock"><pre><code>task-launcher --version</code></pre></div>
+<p class="expect">Expected: <code>task-launcher 0.3.8</code></p>
+
+<div class="codeblock"><pre><code>systemctl is-enabled task-core.service</code></pre></div>
+<p class="expect">Expected: <code>disabled</code></p>
+
+<div class="codeblock"><pre><code>systemctl --user is-enabled task-mesh-service.service</code></pre></div>
+<p class="expect">Expected: <code>disabled</code>. T.A.S.K. never enables services by itself; please do not enable them for this round.</p>
+</li>
+<li><h3>Try it, with no hardware attached</h3>
+<p>Open <strong>T.A.S.K. Launcher</strong> from the desktop menu (or run <code>task-launcher</code> in a terminal as your normal user, not with sudo). Note for each step whether it works: the launcher window opens; the <strong>Devices</strong> tile starts T.A.S.K. Console; <strong>Mesh</strong>, <strong>Maps</strong>, <strong>Radio/APRS</strong>, <strong>SDR Studio</strong> and <strong>Library/Medical</strong> open one at a time and say that no device or content is present. Then log out and back in once and check that nothing T.A.S.K.-related started by itself.</p></li>
+<li><h3>Report what happened</h3>
+<p>Open a <a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">volunteer test report</a> on GitHub (the template lists what to include). Redact callsigns, locations, device serial numbers, Wi-Fi names, user names and passwords first. Security or unexpected-transmit problems go through <a href="support.html#security">private reporting</a>, never a public issue.</p></li>
+</ol>
+<p>The tested-versus-untested record: sections 1, 2, 3 and 6 of the volunteer guide were run in an emulated Debian 13 arm64 chroot on a PC. A real Raspberry Pi, a real desktop session, the &ldquo;try it&rdquo; step, any hardware, and any Pi model other than the developer&rsquo;s were <strong>not</strong> tested with these public packages.</p>
+</div></section>
+
+<section class="section" id="uninstall"><div class="wrap">
+<h2>Uninstall and rollback</h2>
+<p>This removes the T.A.S.K. packages and keeps your settings and data (<code>/etc/task</code>, <code>~/.config/task-*</code>, <code>~/.local/share/task-*</code>, maps, ZIM libraries, message history). Do not run <code>apt-get autoremove</code> just to uninstall T.A.S.K.</p>
+<div class="codeblock"><pre><code>sudo apt remove python3-task-comms task-core task-core-compat task-launcher task-console task-mesh task-maps task-aprs task-sdr task-resources</code></pre></div>
+
+<div class="codeblock"><pre><code>dpkg -l &#x27;task-*&#x27; python3-task-comms | grep &#x27;^ii&#x27;</code></pre></div>
+<p class="expect">Expected: no output.</p>
+
+<p>The Debian packages apt installed as dependencies (Qt, numpy, &hellip;) stay installed; they do no harm. Re-flash the card if you want a completely clean system. If a new package misbehaves and you still have the previous verified <code>.deb</code> files, reinstall them with <code>sudo apt-get install ./task-example_previousversion_all.deb</code>, once per package. If the desktop is unusable, return to your previous SD card: that is the main reason to test on a spare one. Full details: <a href="https://github.com/TASK-Preparedness/TASK/blob/main/INSTALL.md">INSTALL.md</a>.</p>
+</div></section>
+
+<section class="section alt" id="source"><div class="wrap">
+<h2>Source code and building</h2>
+<p>The complete corresponding source for every file in the release is in the repository at tag <code>v0.1.0-alpha.1</code> (commit <code>7fd952f53d4a9d893b7996c06e3418cc1456f291</code>), and in the two source archives above &mdash; offered next to the binaries, as GPLv3 section 6(d) describes. The tree at that tag rebuilds all ten Debian packages byte for byte with:</p>
+<div class="codeblock"><pre><code>python3 packaging/debian/build_debs.py OUTDIR</code></pre></div>
+
+<div class="codeblock"><pre><code>git clone --branch v0.1.0-alpha.1 https://github.com/TASK-Preparedness/TASK.git</code></pre></div>
+
+<p>Optional, safe: the dry-run installer only reads hardware and OS information. From an unpacked source tree: <code>cd installers/raspberry-pi</code>, then <code>/usr/bin/python3 -m task_installer detect</code>. It installs nothing.</p>
+<p>Known gap: the packages&rsquo; <code>copyright</code> files still say <code>upstream URL TBD</code> and their Maintainer field is the placeholder <code>TBD-maintainer-email</code>, which is not a contact address. They were left unchanged so the checksums match what testers were given. Bug reports go to <a href="https://github.com/TASK-Preparedness/TASK/issues">GitHub Issues</a>; security reports use <a href="support.html#security">private vulnerability reporting</a>.</p>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="grid cols-3">
+<div><h2>T.A.S.K.</h2><p>Free, offline-first emergency preparedness software for the Raspberry Pi. Free software under the GNU GPL, version 3 or later.</p></div>
+<div><h2>Project</h2><ul>
+<li><a href="https://github.com/TASK-Preparedness/TASK">Source code on GitHub</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes (v0.1.0-alpha.1)</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/issues">Issues</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
+<div><h2>This site</h2><ul>
+<li><a href="download.html">Download</a></li>
+<li><a href="docs.html">Docs</a></li>
+<li><a href="about.html">Safety &amp; license</a></li>
+<li><a href="support.html">Support &amp; contribute</a></li></ul></div>
+</div>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases.</p>
+</div></footer>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/release.js" defer></script>
+</body>
+</html>

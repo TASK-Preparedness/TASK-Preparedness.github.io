@@ -1,0 +1,50 @@
+# GitHub Pages deployment for the T.A.S.K. website.
+#
+# READY BUT UNUSED: this workflow only runs when started by hand
+# (Actions -> "Deploy website to GitHub Pages" -> Run workflow), and only
+# after Pages has been enabled for the repository with Source = "GitHub Actions"
+# (Settings -> Pages). Nothing here has been pushed or enabled yet.
+#
+# To deploy on every push to main instead, add under `on:`:
+#   push:
+#     branches: [main]
+name: Deploy website to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check internal links
+        run: python3 scripts/check_site.py
+      - name: Assemble site (publish only the site files)
+        run: |
+          mkdir _site
+          cp -r index.html download.html docs.html about.html support.html 404.html .nojekyll assets _site/
+          test -f robots.txt && cp robots.txt _site/ || true
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

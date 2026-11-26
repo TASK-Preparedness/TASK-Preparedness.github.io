@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &amp; contribute — T.A.S.K.</title>
+<meta name="description" content="Report bugs and test results, report security problems privately, contribute code, and optionally support T.A.S.K. through Buy Me a Coffee.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html" aria-label="T.A.S.K. home"><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></a>
+<nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html" aria-current="page">Support &amp; contribute</a></li></ul></nav>
+</div></header>
+<main id="main">
+<section class="page-head"><div class="wrap">
+<h1>Support &amp; contribute</h1>
+<p class="lead">T.A.S.K. is an experimental alpha. There is no official support desk and no project email address: everything goes through GitHub.</p>
+</div></section>
+
+<section class="section" id="report"><div class="wrap">
+<h2>Report a problem or a test result</h2>
+<p>Please use the issue templates (blank issues are turned off, because the templates ask for the details that make a report usable).</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Kind of report</th><th scope="col">Where</th></tr></thead>
+<tbody>
+<tr><th scope="row">Bug, crash, wrong behavior</th><td><a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue &rarr; <strong>Bug report</strong></a></td></tr>
+<tr><th scope="row">I tried a test or an install (pass, fail, skip or blocked)</th><td><a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue &rarr; <strong>Volunteer test report</strong></a></td></tr>
+<tr><th scope="row">My board, radio, GPS or SDR</th><td><a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue &rarr; <strong>Hardware compatibility report</strong></a></td></tr>
+<tr><th scope="row">Packages, checksums or detection failed</th><td><a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue &rarr; <strong>Installation problem</strong></a></td></tr>
+<tr><th scope="row">A feature idea</th><td><a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue &rarr; <strong>Feature request</strong></a></td></tr>
+<tr><th scope="row">Security, unexpected transmit, or a privilege issue</th><td><strong>Private report only</strong> &mdash; <a href="#security">see below</a></td></tr>
+</tbody></table></div>
+<h3 style="margin-top:1.5rem">What to include</h3>
+<p>Run these <strong>one at a time</strong> and paste the output (redact anything personal):</p>
+<div class="codeblock"><pre><code>cat /proc/device-tree/model; echo; grep Revision /proc/cpuinfo; dpkg --print-architecture; cat /etc/os-release</code></pre></div>
+
+<div class="codeblock"><pre><code>dpkg-query -W -f=&#x27;${Package}\t${Version}\t${Architecture}\n&#x27; &#x27;task-*&#x27; python3-task-comms</code></pre></div>
+
+<p>Also say what you were trying to do, what happened, what you expected, and include redacted logs. <strong>Remove callsigns, locations, GPS tracks, message text, device serial numbers, passwords and home-directory paths</strong> before posting.</p>
+<p class="muted">What we cannot do yet: remote access to your Pi (do not offer SSH to a production or working system), or promise a fix date.</p>
+</div></section>
+
+<section class="section alt" id="security"><div class="wrap">
+<h2>Report a security or RF-safety problem</h2>
+<div class="readfirst compact"><p><strong>Do not open a public issue, discussion or pull request for security problems.</strong> There is no security email address &mdash; do not send reports to a personal mailbox.</p></div>
+<p>Use GitHub&rsquo;s private vulnerability reporting: go to the repository&rsquo;s <strong>Security &rarr; Report a vulnerability</strong>, or open the form directly:</p>
+<div class="btn-row"><a class="btn" href="https://github.com/TASK-Preparedness/TASK/security/advisories/new">Report a vulnerability privately</a><a class="btn secondary" href="https://github.com/TASK-Preparedness/TASK/blob/main/SECURITY.md">Read the security policy</a></div>
+<p style="margin-top:1rem">Include the affected module and version, hardware, steps to reproduce and the impact. What counts: anything that could transmit on a radio without explicit operator action; bypassing device ownership, accounts or session checks; code execution, privilege escalation or path traversal (for example in the ZIM/EPUB reader); leaking callsigns, locations, messages or credentials; installer behavior that changes system configuration unexpectedly. Only the current pre-release and the <code>main</code> branch receive fixes.</p>
+</div></section>
+
+<section class="section" id="contribute"><div class="wrap">
+<h2>Contribute</h2>
+<p>Every contribution is welcome: testing on your hardware, bug reports, documentation, translations and code. Say clearly what you tested, on what hardware, and what you did not test.</p>
+<div class="grid cols-2">
+<div class="card"><h3>Ground rules</h3><ul>
+<li>Be kind: read the <a href="https://github.com/TASK-Preparedness/TASK/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.</li>
+<li>Never commit secrets, callsign databases, personal data, device serial numbers or your own config files.</li>
+<li>Never add code that transmits without an explicit operator action, starts services automatically, or flashes firmware without explicit confirmation.</li>
+<li>Report results honestly. Don&rsquo;t claim Windows support or physical-Pi validation unless it has been done.</li></ul></div>
+<div class="card"><h3>Licensing of contributions</h3><ul>
+<li>Inbound = outbound: you contribute under GPL-3.0-or-later and keep your copyright. No CLA.</li>
+<li>Sign off every commit with the <a href="https://developercertificate.org/">Developer Certificate of Origin</a> (<code>git commit -s</code>).</li>
+<li>Add the SPDX license header to new source files, and list third-party code in <code>THIRD_PARTY_NOTICES.md</code>.</li></ul></div>
+</div>
+<p style="margin-top:1rem">Development setup, running tests, building packages and the pull request checklist are in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. Open an issue first for anything large. Questions about trademark use go in a GitHub issue (see the <a href="about.html#trademark">trademark summary</a>).</p>
+</div></section>
+
+<section class="section alt" id="fund"><div class="wrap">
+<h2>Support the project (optional)</h2>
+<p>Financial contributions are entirely optional. T.A.S.K. stays free software under the GPL, and stays free of charge for essential preparedness features. <strong>No software features are, or will be, restricted based on financial contributions.</strong> Contributions support development time, equipment, testing, maintenance and future improvements.</p>
+<div class="btn-row"><a class="btn" href="https://buymeacoffee.com/t.a.s.k.prepardness" rel="noopener">Buy Me a Coffee</a></div>
+<p class="muted" style="margin-top:.8rem">The link goes to <code>buymeacoffee.com/t.a.s.k.prepardness</code>, the project&rsquo;s voluntary funding page (the spelling is the page&rsquo;s actual address). You will leave this site; Buy Me a Coffee has its own privacy practices.</p>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="grid cols-3">
+<div><h2>T.A.S.K.</h2><p>Free, offline-first emergency preparedness software for the Raspberry Pi. Free software under the GNU GPL, version 3 or later.</p></div>
+<div><h2>Project</h2><ul>
+<li><a href="https://github.com/TASK-Preparedness/TASK">Source code on GitHub</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes (v0.1.0-alpha.1)</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/issues">Issues</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
+<div><h2>This site</h2><ul>
+<li><a href="download.html">Download</a></li>
+<li><a href="docs.html">Docs</a></li>
+<li><a href="about.html">Safety &amp; license</a></li>
+<li><a href="support.html">Support &amp; contribute</a></li></ul></div>
+</div>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases.</p>
+</div></footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

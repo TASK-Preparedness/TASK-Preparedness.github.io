@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safety, license &amp; source — T.A.S.K.</title>
+<meta name="description" content="T.A.S.K. safety warnings, GPL-3.0-or-later license, trademark policy summary and where the source code lives.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html" aria-label="T.A.S.K. home"><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></a>
+<nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html" aria-current="page">Safety &amp; license</a></li><li><a href="support.html">Support &amp; contribute</a></li></ul></nav>
+</div></header>
+<main id="main">
+<section class="page-head"><div class="wrap">
+<h1>About: safety, license &amp; source</h1>
+<p class="lead">T.A.S.K. is used around radios and in emergencies, so this page puts the safety rules first and the legal details right after. It summarizes the repository&rsquo;s own documents; where they differ, the documents win.</p>
+</div></section>
+
+<section class="section" id="safety"><div class="wrap">
+<h2>Safety</h2>
+<section class="readfirst" aria-labelledby="readfirst-h" id="read-first">
+<h2 id="readfirst-h">&#9888;&#65039; READ FIRST &mdash; experimental alpha, safety and radio warnings</h2>
+<ul>
+<li><strong>EXPERIMENTAL ALPHA &mdash; NOT VALIDATED ON A PHYSICAL RASPBERRY PI.</strong> The public packages, installer and source tree have not been installed or accepted on a clean physical Raspberry Pi. Treat every package and every asset as experimental. Do not rely on T.A.S.K. as your only tool in a real emergency. It is not a substitute for emergency services.</li>
+<li><strong>RECEIVE-ONLY BY DEFAULT.</strong> T.A.S.K. must never transmit on any radio unless a licensed operator explicitly tells it to. Amateur transmit stays disabled until you enter your own licensed callsign. Transmit-capable features are experimental. <strong>Do not transmit if you are not licensed and allowed to.</strong> You are responsible for knowing the law where you are.</li>
+<li><strong>NO AUTOMATIC INSTALL, FIRMWARE FLASHING OR SERVICE START.</strong> The installer is a dry run only. It never flashes firmware, never takes control of your radios, and never starts anything automatically.</li>
+<li><strong>UNVERIFIED &mdash; REQUIRES PHYSICAL HARDWARE TEST.</strong> Any radio, GPS, SDR, board or feature not listed as tested in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a> carries this label. Test on a spare SD card, never on a working system.</li>
+</ul>
+<p>Read <a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md">SAFETY.md</a> and <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a> before you install anything. See also the <a href="about.html#safety">safety summary on this site</a>.</p>
+</section>
+<div class="grid cols-2">
+<div class="card"><h3>Not a substitute for emergency services</h3><p>If someone is in immediate danger, call 911 (or the local emergency number where you are). T.A.S.K. must not be your only plan for calling for help, navigation, or medical information. Offline medical references are not a diagnosis and do not replace a clinician.</p></div>
+<div class="card"><h3>Receive-only by default</h3><p>Nothing transmits on a radio unless you explicitly tell it to. SDR Studio is receive-only. Mesh messaging over a USB Meshtastic node can send only when you compose and send a message. Radio / APRS transmit stays off until you enter your own licensed callsign and enable it. There are no automatic beacons, digipeaters or acknowledgements added by T.A.S.K.</p></div>
+<div class="card"><h3>Licenses and local law</h3><p>Radio rules vary by country and change over time. In the United States, amateur transmission generally requires an FCC amateur license, and GMRS generally requires a GMRS license; FRS, MURS, CB and similar services have their own rules. A callsign prompt in the software is a guard, not a substitute for a real license or for knowing band plans, power limits and identification rules. This is practical guidance, not legal advice. See <a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md">SAFETY.md</a>.</p></div>
+<div class="card"><h3>Back up and use a spare system</h3><p>Test on a spare SD card, never on a production system or the only copy of your files. Back up <code>~/.config/task-*</code>, <code>~/.local/share/task-*</code>, <code>/etc/task</code>, maps, ZIM libraries and message history before installing, upgrading or removing packages. Expect breakage.</p></div>
+<div class="card"><h3>Privacy</h3><p>Mesh messages, GPS tracks, APRS and logs can reveal your location, your callsign and who you talk to. Redact them before filing a public issue.</p></div>
+<div class="card"><h3>If something seems unsafe</h3><p>Stop transmitting; power down or unplug radios if needed. Take the spare card out and return to a known-good card if the system is unstable. For vulnerabilities or unexpected RF or privilege behavior, use <a href="support.html#security">private reporting</a>.</p></div>
+</div>
+<p style="margin-top:1rem">Current limitations, from the release notes: no physical-Pi validation of the public packages or installer; the installer only performs a dry run; several modules still await physical hardware acceptance tests; no map, ZIM, medical or firmware content is included; the mesh alert sound is not shipped; no Windows support. Details: <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a>.</p>
+</div></section>
+
+<section class="section alt" id="license"><div class="wrap">
+<h2>License</h2>
+<p>This is a description of the project&rsquo;s license choice, not legal advice.</p>
+<ul>
+<li>T.A.S.K. is free software under the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version (<strong>GPL-3.0-or-later</strong>). It is distributed WITHOUT ANY WARRANTY. Read the <a href="https://github.com/TASK-Preparedness/TASK/blob/main/LICENSE">full license text</a>.</li>
+<li>The <code>task-mesh</code> package bundles meshtastic, which is GPL-3.0-only, so that package as a whole is distributed under GPL-3.0.</li>
+<li>Third-party components keep their own licenses and notices; see <a href="https://github.com/TASK-Preparedness/TASK/blob/main/THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>.</li>
+<li>Contributions are accepted under inbound = outbound licensing with a Developer Certificate of Origin (DCO) sign-off. There is no CLA.</li>
+</ul>
+<p>Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors.</p>
+<h3>Project commitments (not license terms)</h3>
+<ul>
+<li>Essential emergency preparedness features stay free of charge and work offline, with no subscription, account or paywalled essential edition.</li>
+<li>Joshua Sturtz may offer official T.A.S.K. hardware kits, installation, training, professional support and custom deployments. The software on an official kit is the same free GPL software with its complete source.</li>
+<li>Anyone may build a business on T.A.S.K. under the GPL and the trademark policy, including selling copies, kits or services, and renamed versions.</li>
+</ul>
+<p>The promises are in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/PROJECT-COMMITMENTS.md">PROJECT-COMMITMENTS.md</a>.</p>
+</div></section>
+
+<section class="section" id="trademark"><div class="wrap">
+<h2>Trademark policy</h2>
+<p>The names <strong>T.A.S.K.</strong>, <strong>TASK</strong> (when used for this project) and <strong>Tactical Access Support Kit</strong>, and any T.A.S.K. logo, are claimed by Joshua Sturtz as <em>unregistered</em> marks. The policy does not restrict, condition or add to any right the GPL gives you; it covers only names and logos. Summary of <a href="https://github.com/TASK-Preparedness/TASK/blob/main/TRADEMARK.md">TRADEMARK.md</a>:</p>
+<div class="grid cols-2">
+<div class="card"><h3>You may, without asking</h3><ul>
+<li>Redistribute unmodified T.A.S.K. (source or the official packages, unchanged), even for a fee, without suggesting you are the official source.</li>
+<li>Refer to T.A.S.K. truthfully: reviews, tutorials, &ldquo;based on T.A.S.K.&rdquo;, &ldquo;a fork of T.A.S.K.&rdquo;.</li>
+<li>Keep the name inside the code and keep all copyright and license notices.</li>
+<li>Install unmodified T.A.S.K. on hardware you sell and say so factually.</li></ul></div>
+<div class="card"><h3>You need a different name if&hellip;</h3><ul>
+<li>You distribute a modified version (a fork, a changed rebuild, a customized image): use a name and logo that are not T.A.S.K. or confusingly similar, while keeping all copyright and license notices.</li>
+<li>Small packaging-only changes to an unchanged release are fine under the T.A.S.K. name if you say so in your release notes.</li></ul></div>
+</div>
+<p style="margin-top:1rem"><strong>Reserved for Joshua Sturtz and people he authorizes in writing:</strong> &ldquo;Official T.A.S.K.&rdquo;, &ldquo;Certified T.A.S.K.&rdquo; and similar wording; T.A.S.K.-branded hardware kits and services; domain names, social handles and organization names consisting of or beginning with a T.A.S.K. mark; commercial use of the logo. Don&rsquo;t use the marks for software changed to transmit without explicit operator action, to collect personal data, or to remove the safety notices.</p>
+<p>Meshtastic&reg; is a registered trademark of Meshtastic LLC. T.A.S.K. names other projects only to describe compatibility and is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project named in its documentation.</p>
+</div></section>
+
+<section class="section alt" id="source"><div class="wrap">
+<h2>Where the source is</h2>
+<ul>
+<li><strong>Repository:</strong> <a href="https://github.com/TASK-Preparedness/TASK">github.com/TASK-Preparedness/TASK</a> at tag <a href="https://github.com/TASK-Preparedness/TASK/tree/v0.1.0-alpha.1"><code>v0.1.0-alpha.1</code></a>, commit <code>7fd952f53d4a9d893b7996c06e3418cc1456f291</code>.</li>
+<li><strong>Source archives</strong> attached to the <a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">release page</a> (same tree as the tag): <code>TASK-0.1.0-alpha.1-source.tar.gz</code> and <code>TASK-0.1.0-alpha.1-source.zip</code>.</li>
+<li><strong>Build scripts</strong> for the packages are included (<code>packaging/debian/build_debs.py</code>, <code>release/build_release.py</code> and the module builders). The four vendored third-party wheels that <code>task-mesh</code> bundles are in <code>mesh/packaging/vendor/</code>, and the matching Meshtastic protocol (<code>.proto</code>) sources are in <code>mesh/packaging/vendor-source/</code>.</li>
+<li><strong>Source offer for the packages:</strong> because the Debian packages were built before the repository URL existed, their <code>copyright</code> files still say &ldquo;upstream URL TBD&rdquo; and their Maintainer field is the placeholder <code>TBD-maintainer-email</code>. Until a rebuild fixes that, the <a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">release notes</a> are the source offer for those packages.</li>
+</ul>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="grid cols-3">
+<div><h2>T.A.S.K.</h2><p>Free, offline-first emergency preparedness software for the Raspberry Pi. Free software under the GNU GPL, version 3 or later.</p></div>
+<div><h2>Project</h2><ul>
+<li><a href="https://github.com/TASK-Preparedness/TASK">Source code on GitHub</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes (v0.1.0-alpha.1)</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/issues">Issues</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
+<div><h2>This site</h2><ul>
+<li><a href="download.html">Download</a></li>
+<li><a href="docs.html">Docs</a></li>
+<li><a href="about.html">Safety &amp; license</a></li>
+<li><a href="support.html">Support &amp; contribute</a></li></ul></div>
+</div>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases.</p>
+</div></footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

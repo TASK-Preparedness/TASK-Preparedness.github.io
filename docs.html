@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs &amp; getting started — T.A.S.K.</title>
+<meta name="description" content="Getting started with T.A.S.K. and a map of the project documentation: install, safety, hardware, modules, license and contributing.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html" aria-label="T.A.S.K. home"><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></a>
+<nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="docs.html" aria-current="page">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support &amp; contribute</a></li></ul></nav>
+</div></header>
+<main id="main">
+<section class="page-head"><div class="wrap">
+<h1>Docs &amp; getting started</h1>
+<p class="lead">The documentation lives in the project repository. This page is a map to it, plus the shortest safe path from download to a running launcher.</p>
+<div class="readfirst compact"><p><strong>Experimental alpha &mdash; not validated on a physical Raspberry Pi. Receive-only by default.</strong> Use a spare SD card. Read <a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md">SAFETY.md</a> and <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a> first. Windows is not supported.</p></div>
+</div></section>
+
+<section class="section" id="start"><div class="wrap">
+<h2>Getting started</h2>
+<ol class="steps">
+<li><h3>Make sure your setup matches</h3><p>A Raspberry Pi 5 running Debian 13 &ldquo;trixie&rdquo; arm64 (or 64-bit Raspberry Pi OS based on trixie), on a spare SD card. Anything else is outside this alpha&rsquo;s test call. <a href="download.html#requirements">System requirements</a>.</p></li>
+<li><h3>Download and verify</h3><p>Get the packages zip and <code>SHA256SUMS</code> from the <a href="download.html#files">download page</a> and run <code>sha256sum -c SHA256SUMS</code>. <a href="download.html#verify">Verification steps</a>.</p></li>
+<li><h3>Install by hand with apt</h3><p>One command at a time, from the verified <code>.deb</code> files. <a href="download.html#install">Install steps</a>, or the repository&rsquo;s <a href="https://github.com/TASK-Preparedness/TASK/blob/main/docs/VOLUNTEER-TESTING.md">volunteer guide</a>.</p></li>
+<li><h3>Open the launcher</h3><p>Choose <em>T.A.S.K.</em> from the applications menu, or run <code>task-launcher</code>. Nothing starts automatically and nothing transmits unless you choose to.</p></li>
+<li><h3>Tell the project how it went</h3><p>Use the <a href="https://github.com/TASK-Preparedness/TASK/issues/new/choose">GitHub issue templates</a>. <a href="support.html">Support &amp; contribute</a>.</p></li>
+</ol>
+</div></section>
+
+<section class="section alt" id="after"><div class="wrap">
+<h2>After a successful install</h2>
+<p>From the project&rsquo;s <a href="https://github.com/TASK-Preparedness/TASK/blob/main/QUICKSTART.md">QUICKSTART.md</a>. <strong>For volunteer test round 1, skip anything that needs a radio, node, SDR or GPS</strong> &mdash; that round tests install, start and removal only.</p>
+<ul>
+<li><strong>Mesh:</strong> plug in your Meshtastic node, open <em>Mesh Network</em>, pick the device. The background message service is optional; enable it yourself from <em>Mesh &rarr; Network Status</em> if you want messages while the window is closed. For a loud audible alert, run <code>scripts/generate-mesh-alert.sh</code> from the source tree (the alert sound is not shipped).</li>
+<li><strong>Maps:</strong> copy an <code>.mbtiles</code> file into the maps storage shown in <em>Maps &amp; GPS</em>; plug in a gpsd-supported GPS for your position.</li>
+<li><strong>Library:</strong> point <em>Library</em> at your ZIM/PDF/EPUB folders (for example Kiwix downloads you made earlier).</li>
+<li><strong>Radio / APRS:</strong> configure Direwolf yourself first. Transmit stays off until you enter your own licensed callsign and enable it.</li>
+<li><strong>SDR Studio:</strong> plug in an RTL-SDR; it only receives.</li>
+</ul>
+<p>Radios, GPS units and SDRs are listed with their verification status in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a>. Anything not listed as tested is <strong>UNVERIFIED &mdash; REQUIRES PHYSICAL HARDWARE TEST</strong>.</p>
+</div></section>
+
+<section class="section" id="index"><div class="wrap">
+<h2>Documentation index</h2>
+<p class="muted">These links open the latest version on the repository&rsquo;s <code>main</code> branch on GitHub. For files that match the downloads exactly, browse the repository at <a href="https://github.com/TASK-Preparedness/TASK/tree/v0.1.0-alpha.1">tag v0.1.0-alpha.1</a>.</p>
+<h3>Install and test</h3><ul class="doclist"><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/docs/VOLUNTEER-TESTING.md"><strong>Volunteer testing guide</strong><span>Round 1: install, start and remove on a spare-card Pi 5, no radios.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/INSTALL.md"><strong>Install reference</strong><span>Requirements, SHA-256 checks, one-package installs, uninstall and rollback.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/QUICKSTART.md"><strong>Quick start</strong><span>First steps after a successful install.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/OFFLINE.md"><strong>Offline installation</strong><span>Planned, not part of this alpha.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/TESTING.md"><strong>Testing</strong><span>Automated test results (not a Pi test) and how to run them.</span></a></li></ul><h3>Safety and limits</h3><ul class="doclist"><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md"><strong>Safety and legal precautions</strong><span>Receive-only, licensing, backups, privacy.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md"><strong>Known issues</strong><span>Problems already known about.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md"><strong>Hardware compatibility</strong><span>Which boards, radios and accessories are verified, untested or unsupported.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/WINDOWS.md"><strong>Windows status</strong><span>Unavailable; groundwork only.</span></a></li></ul><h3>About the software</h3><ul class="doclist"><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/MODULES.md"><strong>Modules</strong><span>Verified inventory and maturity of each module.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/docs/ARCHITECTURE.md"><strong>Architecture</strong><span>How the pieces fit together.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/docs/REPOSITORY-LAYOUT.md"><strong>Repository layout</strong><span>Where things are in the source tree.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/ROADMAP.md"><strong>Roadmap</strong><span>Milestones; dates are not promised.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md"><strong>Changelog</strong><span>History of changes.</span></a></li></ul><h3>Project, license and community</h3><ul class="doclist"><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/LICENSE"><strong>License (GPL)</strong><span>Full license text.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/THIRD_PARTY_NOTICES.md"><strong>Third-party notices</strong><span>Bundled components and their licenses.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/TRADEMARK.md"><strong>Trademark policy</strong><span>How the T.A.S.K. name and logo may be used.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/PROJECT-COMMITMENTS.md"><strong>Project commitments</strong><span>What stays free; not license terms.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CONTRIBUTING.md"><strong>Contributing</strong><span>Ground rules, DCO sign-off, development setup, pull requests.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/SUPPORT.md"><strong>Support</strong><span>Where to report what.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/SECURITY.md"><strong>Security policy</strong><span>Private reporting and what counts.</span></a></li><li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CODE_OF_CONDUCT.md"><strong>Code of conduct</strong><span>How we treat each other.</span></a></li></ul>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="grid cols-3">
+<div><h2>T.A.S.K.</h2><p>Free, offline-first emergency preparedness software for the Raspberry Pi. Free software under the GNU GPL, version 3 or later.</p></div>
+<div><h2>Project</h2><ul>
+<li><a href="https://github.com/TASK-Preparedness/TASK">Source code on GitHub</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes (v0.1.0-alpha.1)</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/issues">Issues</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
+<div><h2>This site</h2><ul>
+<li><a href="download.html">Download</a></li>
+<li><a href="docs.html">Docs</a></li>
+<li><a href="about.html">Safety &amp; license</a></li>
+<li><a href="support.html">Support &amp; contribute</a></li></ul></div>
+</div>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases.</p>
+</div></footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
