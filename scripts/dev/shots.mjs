@@ -2,7 +2,7 @@ import { chromium } from 'playwright-core';
 const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
 const out = '/workspace/task-website-previews/';
 const sizes = { desktop: { width: 1366, height: 900 }, mobile: { width: 390, height: 844 } };
-const pages = ['index', 'download', 'docs', 'about', 'support'];
+const pages = ['index', 'download', 'build', 'docs', 'about', 'support'];
 const errors = [];
 for (const [name, vp] of Object.entries(sizes)) {
   const ctx = await b.newContext({ viewport: vp, deviceScaleFactor: name === 'mobile' ? 2 : 1, isMobile: name === 'mobile' });

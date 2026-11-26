@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!-- SPDX-FileCopyrightText: 2026 Joshua Sturtz -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect x="4" y="4" width="120" height="120" rx="24" fill="#0b0d10"/>
+  <g fill="#1b2027" stroke="#3a4350" stroke-width="2">
+    <rect x="20" y="22" width="24" height="18" rx="5"/>
+    <rect x="52" y="22" width="24" height="18" rx="5"/>
+    <rect x="84" y="22" width="24" height="18" rx="5"/>
+    <rect x="20" y="48" width="24" height="18" rx="5"/>
+    <rect x="52" y="48" width="24" height="18" rx="5"/>
+    <rect x="84" y="48" width="24" height="18" rx="5"/>
+    <rect x="20" y="74" width="24" height="18" rx="5"/>
+    <rect x="52" y="74" width="24" height="18" rx="5"/>
+    <rect x="84" y="74" width="24" height="18" rx="5" fill="#2d6cdf" stroke="#9cc0ff"/>
+  </g>
+  <circle cx="28" cy="106" r="5" fill="#3fb950"/>
+  <rect x="40" y="103" width="66" height="6" rx="3" fill="#3a4350"/>
+</svg>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build List — T.A.S.K. hardware configurator</title>
+<meta name="description" content="Build your own T.A.S.K. station: a Raspberry Pi 5 parts list with typical November 2026 prices, checklists, and honest hardware status from the project docs.">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html" aria-label="T.A.S.K., Tactical Access Support Kit, home"><img src="assets/img/task-mark.svg" width="40" height="40" alt=""><span><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></span></a>
+<nav class="nav-wide" aria-label="Primary"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="index.html#capabilities">Features</a></li><li><a href="download.html">Download</a></li><li><a href="build.html" aria-current="page">Build List</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support</a></li><li><a class="ext" href="https://github.com/TASK-Preparedness/TASK">GitHub</a></li></ul></nav>
+<details class="nav-menu">
+<summary><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span> Menu</summary>
+<nav aria-label="Mobile"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="index.html#capabilities">Features</a></li><li><a href="download.html">Download</a></li><li><a href="build.html" aria-current="page">Build List</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support</a></li><li><a class="ext" href="https://github.com/TASK-Preparedness/TASK">GitHub</a></li></ul></nav>
+</details>
+</div></header>
+<main id="main">
+<section class="page-head"><div class="wrap">
+<p class="muted" style="letter-spacing:.1em;text-transform:uppercase;font-weight:700;font-size:.8rem;color:var(--accent)">T.A.S.K. / Hardware configurator</p>
+<h1>Build your own station.</h1>
+<p class="lead">A parts list for a Raspberry Pi 5 station, taken from the project&rsquo;s documented requirements and <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a>. Check off what you already own. Prices are typical US-dollar estimates as of November 2026, excluding tax and shipping — not a quote, and not a T.A.S.K. store.</p>
+<div class="readfirst compact" id="read-first"><p><strong>READ FIRST — EXPERIMENTAL ALPHA — NOT VALIDATED ON A PHYSICAL RASPBERRY PI. RECEIVE-ONLY BY DEFAULT.</strong> Volunteer testing is requested only on a Pi 5 with Debian 13 trixie arm64, on a spare SD card. Anything not listed as tested in HARDWARE.md is <strong>UNVERIFIED — REQUIRES PHYSICAL HARDWARE TEST</strong>. Do not transmit if you are not licensed and allowed to. T.A.S.K. is not a substitute for emergency services.</p></div>
+</div></section>
+
+<section class="section" id="configurator" data-default-build="comms"><div class="wrap">
+<figure class="photo-slot" style="margin:0 0 1.5rem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" role="img" aria-label="Illustration of a Raspberry Pi-sized board, a USB radio node, an SDR dongle and a GPS receiver — not a product photograph." width="960" height="280">
+<rect width="960" height="280" rx="16" fill="#0B0D10"/>
+<rect x="1" y="1" width="958" height="278" rx="15" fill="none" stroke="#2A2F36"/>
+<rect x="48" y="50" width="280" height="180" rx="12" fill="#15181D" stroke="#2A2F36"/>
+<circle cx="72" cy="74" r="6" fill="#3FB950"/>
+<circle cx="92" cy="74" r="6" fill="#D29922"/>
+<circle cx="112" cy="74" r="6" fill="#F85149"/>
+<rect x="64" y="100" width="200" height="14" rx="3" fill="#1B1F25"/>
+<rect x="64" y="128" width="248" height="70" rx="6" fill="#1B1F25" stroke="#2A2F36"/>
+<text x="72" y="170" fill="#9AA0A6" font-family="Inter, Noto Sans, sans-serif" font-size="14">Raspberry Pi 5</text>
+<rect x="360" y="80" width="140" height="90" rx="8" fill="#15181D" stroke="#2A2F36"/>
+<text x="372" y="132" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="13">Meshtastic</text>
+<rect x="530" y="100" width="90" height="50" rx="6" fill="#15181D" stroke="#2A2F36"/>
+<text x="548" y="130" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="13">SDR</text>
+<rect x="650" y="90" width="70" height="70" rx="35" fill="#15181D" stroke="#2A2F36"/>
+<text x="662" y="130" fill="#E8EAED" font-family="Inter, Noto Sans, sans-serif" font-size="12">GPS</text>
+<text x="360" y="230" fill="#8B949E" font-family="Inter, Noto Sans, sans-serif" font-size="13">Illustration only — replace this area with a photo of your own build if you wish.</text>
+</svg>
+<figcaption>Illustration only. A third-party product photograph is not used here; this space can take a photo of your own station later.</figcaption>
+</figure>
+
+<div class="seg" role="tablist" aria-label="Recommended builds">
+<button type="button" role="tab" data-build="starter" aria-selected="false">Starter</button>
+<button type="button" role="tab" data-build="comms" aria-selected="true">Comms</button>
+<button type="button" role="tab" data-build="field" aria-selected="false">Field</button>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="value" id="est-cost">$372–$550</div><p>Estimated build cost for the <span id="build-label">Communications station</span></p></div>
+<div class="stat"><div class="value" id="acquired">0/9</div><p>Parts acquired</p><div class="progress" aria-hidden="true"><span id="prog"></span></div></div>
+</div>
+
+<h2>Check off components you already own</h2>
+<p>The list below follows the selected build. Checked items drop out of the remaining cost and the shopping list. Your checks stay in this browser only.</p>
+<ul class="checklist" data-kind="core">
+<li data-id="pi5" data-lo="175" data-hi="175" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-pi5">
+<span><span class="part-name">Raspberry Pi 5 (8 GB)</span><span class="part-meta">Official list price $175 (board only), April 2026 product brief; $175 at PiShop US, an approved reseller, checked 26 Nov 2026.</span></span>
+<span class="price">$175</span>
+</label>
+<p class="why">The development Pi is a Raspberry Pi 5 (8 GB). Volunteer testing for this alpha is requested only on a Pi 5 running Debian 13 “trixie” arm64 (or 64-bit Raspberry Pi OS based on trixie), on a spare SD card. Other memory sizes exist; 2 GB may be tight with SDR and the WebEngine reader, and they are untested. Public packages have not been validated on a physical Pi.</p>
+</li><li data-id="psu" data-lo="12" data-hi="15" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-psu">
+<span><span class="part-name">27 W USB-C power supply (5 V / 5 A)</span><span class="part-meta">Official Raspberry Pi 27W USB-C PSU is $12 (Raspberry Pi, compared with the $15 45W model) and $12.95 at PiShop US. The 45W official supply is $15 and also feeds 5.1 V / 5 A to a Pi 5.</span></span>
+<span class="price">$12–$15</span>
+</label>
+<p class="why">Raspberry Pi recommends a high-quality 5 V / 5 A USB-C supply, such as the official 27W PSU, so the board can pass enough current to USB peripherals. This accessory is not listed in HARDWARE.md as T.A.S.K.-tested; treat the official part as the manufacturer’s recommendation. UNVERIFIED as a T.A.S.K. item.</p>
+</li><li data-id="case" data-lo="10" data-hi="20" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-case">
+<span><span class="part-name">Case with active cooling</span><span class="part-meta">Official Raspberry Pi Case for Raspberry Pi 5 is $10 and includes a temperature-controlled fan and heatsink. A separate official Active Cooler is about $5 if you run the board uncased. Third-party cooling cases cost more.</span></span>
+<span class="price">$10–$20</span>
+</label>
+<p class="why">Raspberry Pi 5 performs best with active cooling. The official case already includes a fan, so you do not also need the stand-alone Active Cooler unless you are not using that case. Not listed in HARDWARE.md. UNVERIFIED as a T.A.S.K. item.</p>
+</li><li data-id="sd" data-lo="12" data-hi="40" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-sd">
+<span><span class="part-name">128 GB microSD card (A2 / V30 class)</span><span class="part-meta">A blank official Raspberry Pi 128 GB A2 V30 card is $37.95 at PiShop US. Generic A2/V30 128 GB cards are often sold for less, typically in the $12–$25 range. You need a way to flash a clean OS image onto a spare card.</span></span>
+<span class="price">$12–$40</span>
+</label>
+<p class="why">INSTALL.md asks for a spare SD card and about 300 MB free plus room for maps or ZIM files you add yourself. 128 GB is a comfortable size, not a hard requirement. Flash Debian 13 or Raspberry Pi OS 64-bit (trixie) yourself; do not assume a preloaded card is trixie or 64-bit. UNVERIFIED as a T.A.S.K. item.</p>
+</li><li data-id="display" data-lo="85" data-hi="170" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-display">
+<span><span class="part-name">Display and micro-HDMI cable</span><span class="part-meta">A basic 21–24 inch HDMI monitor is commonly about $80–$160. Official Raspberry Pi micro-HDMI to HDMI cables are typically about $5–$10. Many people already own a display — check this off if you do.</span></span>
+<span class="price">$85–$170</span>
+</label>
+<p class="why">The installer and launcher expect a desktop session. Any working HDMI display is enough; T.A.S.K. does not require a particular screen. This line is a typical desktop cost, not a T.A.S.K.-tested accessory. UNVERIFIED.</p>
+</li><li data-id="input" data-lo="15" data-hi="30" data-builds="starter comms field">
+<label>
+<input type="checkbox" name="own-input">
+<span><span class="part-name">Keyboard and mouse</span><span class="part-meta">A generic USB or Bluetooth keyboard and mouse set is typically $15–$30. Official Raspberry Pi keyboard-and-mouse bundles are commonly sold around $20–$25.</span></span>
+<span class="price">$15–$30</span>
+</label>
+<p class="why">Needed for a desktop session. Not listed in HARDWARE.md. UNVERIFIED as a T.A.S.K. item.</p>
+</li><li data-id="gps" data-lo="10" data-hi="20" data-builds="comms field">
+<label>
+<input type="checkbox" name="own-gps">
+<span><span class="part-name">USB GPS receiver (u-blox 7 class)</span><span class="part-meta">Typical USB u-blox 7 “G-mouse” receivers sell for about $10–$20.</span></span>
+<span class="price">$10–$20</span>
+</label>
+<p class="why">HARDWARE.md lists a u-blox 7 USB GPS (via gpsd) as verified on the development system. gpsd owns the device; T.A.S.K. reads gpsd only. Other gpsd-supported receivers are untested. Public packages are still not validated on a physical Pi.</p>
+</li><li data-id="mesh" data-lo="18" data-hi="30" data-builds="comms field">
+<label>
+<input type="checkbox" name="own-mesh">
+<span><span class="part-name">Meshtastic USB node (Heltec V3, 915 MHz class)</span><span class="part-meta">Heltec lists the WiFi LoRa 32 (V3) at $17.90–$19.90. US retailers commonly charge about $25–$27 for the 902–928 MHz board, sometimes with a shell.</span></span>
+<span class="price">$18–$30</span>
+</label>
+<p class="why">HARDWARE.md lists a Heltec WiFi LoRa 32 V3 (915 MHz, CP2102 USB) as verified for Meshtastic over USB serial on the development system. Use the frequency band that is legal where you are (US builders typically want 902–928 MHz). Heltec V3.2, T-Beam, T-Deck and other Meshtastic USB nodes are untested. A Meshtastic node transmits on LoRa when it sends or routes traffic — you must use legal settings. “Meshtastic” is a trademark of the Meshtastic project. Public packages are not Pi-validated.</p>
+</li><li data-id="sdr" data-lo="35" data-hi="50" data-builds="comms field">
+<label>
+<input type="checkbox" name="own-sdr">
+<span><span class="part-name">RTL-SDR receiver and antenna</span><span class="part-meta">The official RTL-SDR Blog V3 dongle with a dipole antenna kit is $44.95 on rtl-sdr.com. Dongle-only listings are often about $35.</span></span>
+<span class="price">$35–$50</span>
+</label>
+<p class="why">HARDWARE.md lists RTL-SDR (RTL2832U-family) as untested with SDR Studio 0.2.4 — physical acceptance test pending — so this is UNVERIFIED. SDR Studio is receive-only. The RTL-SDR Blog V4 is untested specifically and needs a SoapySDR/librtlsdr build that supports the V4 tuner. Do not attach a transmit-capable SDR chain and expect this software to make it legal or safe.</p>
+</li><li data-id="power" data-lo="40" data-hi="100" data-builds="field">
+<label>
+<input type="checkbox" name="own-power">
+<span><span class="part-name">Portable power (USB-C, 5 V / 5 A capable)</span><span class="part-meta">USB-C power banks and UPS HATs that can actually supply 5 V / 5 A (or a validated 5.1 V / 5 A PD profile) typically cost about $40–$100. Many ordinary power banks only supply 5 V / 3 A and will starve a Pi 5 plus radios.</span></span>
+<span class="price">$40–$100</span>
+</label>
+<p class="why">Not listed in HARDWARE.md. UNVERIFIED. Raspberry Pi 5 is specified at 5 V / 5 A DC via USB-C with Power Delivery. Do not assume a laptop-style PD bank will keep the station stable under load until you have tested it yourself.</p>
+</li><li data-id="transport" data-lo="25" data-hi="70" data-builds="field">
+<label>
+<input type="checkbox" name="own-transport">
+<span><span class="part-name">Protective transport case</span><span class="part-meta">A generic hard case that fits a Pi, a small display or cables, and a couple of radios is commonly $25–$70, depending on size.</span></span>
+<span class="price">$25–$70</span>
+</label>
+<p class="why">Not listed in HARDWARE.md. UNVERIFIED. Useful for a field bag; it is not required to run the software. This site does not recommend a particular brand.</p>
+</li><li data-id="hub" data-lo="15" data-hi="35" data-builds="field">
+<label>
+<input type="checkbox" name="own-hub">
+<span><span class="part-name">Powered USB hub</span><span class="part-meta">A generic USB 3 hub is typically $15–$35. Prefer a powered hub if you will attach a GPS, a Meshtastic node, an SDR and a keyboard at once.</span></span>
+<span class="price">$15–$35</span>
+</label>
+<p class="why">A Pi 5 has two USB 3 and two USB 2 ports. A hub is only needed when you run out of ports or want to power several dongles more comfortably. Not listed in HARDWARE.md. UNVERIFIED.</p>
+</li>
+</ul>
+<p>Estimated remaining cost: <strong id="remaining">$372–$550</strong></p>
+<div class="btn-row"><button type="button" class="btn" id="copy-list">Copy remaining shopping list</button></div>
+<p class="muted" style="margin-top:1rem">Estimates as of November 2026, US dollars, excluding tax and shipping. Official Raspberry Pi list prices moved up in 2026 because of memory costs (the 8 GB Pi 5 list price is $175). Generic parts show a typical street range; official accessories show the list or approved-reseller price we checked. There are no affiliate links. T.A.S.K. does not sell hardware.</p>
+
+<h2 style="margin-top:2.4rem">Three recommended builds</h2>
+<div class="grid cols-3 builds">
+<article class="card" data-select-build="starter">
+<h3>Starter station</h3>
+<p>A basic desktop Pi 5 for learning, installing the experimental packages, and using the offline library once you add your own files. No radios. About $309–$450 if you buy every line, or much less if you already have a monitor, keyboard and card.</p>
+<p class="muted">6 parts &middot; core platform only</p>
+<button type="button" class="btn small" data-select-build="starter" aria-pressed="false">Select Starter</button>
+</article>
+<article class="card selected" data-select-build="comms">
+<h3>Communications station</h3>
+<p>Adds a USB GPS (u-blox 7 class), a Meshtastic USB node (Heltec V3 915 MHz class) and a receive-only RTL-SDR. This is the first build that exercises Maps &amp; GPS, Mesh Network and SDR. About $372–$550.</p>
+<p class="muted">9 parts &middot; GPS, mesh, SDR</p>
+<button type="button" class="btn small" data-select-build="comms" aria-pressed="true">Select Comms</button>
+</article>
+<article class="card" data-select-build="field">
+<h3>Portable field station</h3>
+<p>Adds portable power, a protective transport case and a USB hub. These extras are not in HARDWARE.md and are UNVERIFIED. About $452–$755, plus whatever you already counted in Comms.</p>
+<p class="muted">12 parts &middot; power, transport, USB</p>
+<button type="button" class="btn small" data-select-build="field" aria-pressed="false">Select Field</button>
+</article>
+</div>
+<p class="muted">Starter totals $309–$450; Field totals $452–$755. The large figure above follows the tab you have selected (default: Comms).</p>
+</div></section>
+
+<section class="section alt" id="optional"><div class="wrap">
+<h2>Optional expansion: Radio / APRS</h2>
+<p>Not part of the three build totals. T.A.S.K. talks to an already running Direwolf instance through a soundcard TNC and a radio. Transmit stays off until a licensed operator enters their own callsign and enables it.</p>
+<ul class="checklist" data-kind="optional">
+<li data-id="aprs" data-lo="55" data-hi="150">
+<label>
+<input type="checkbox" name="own-aprs">
+<span><span class="part-name">Soundcard TNC / audio + PTT interface (and a radio)</span><span class="part-meta">A DigiRig Mobile is $54.95 from the manufacturer (cables sold separately, typically $15–$25). A Mobilinkd TNC4 is $149.95. You also need an amateur radio, which is not priced here.</span></span>
+<span class="price">$55–$150</span>
+</label>
+<p class="why">HARDWARE.md describes Radio / APRS as “Direwolf soundcard TNC + radio,” experimental, with the receive path in use and transmit only by explicit action. DigiRig and Mobilinkd are examples of that class of interface (audio and PTT, or a KISS TNC). They are not named in HARDWARE.md, so treat both as UNVERIFIED. A radio programming cable is not a TNC and will not give you APRS by itself. Amateur transmit in T.A.S.K. stays off until you enter your own licensed callsign; do not transmit if you are not licensed and allowed to. BTECH UV-PRO over Bluetooth is unverified and no support is claimed.</p>
+</li>
+</ul>
+<p class="muted">A programming cable for a handheld radio is not a TNC. GMRS data in this alpha uses a simulated driver only; do not assume a GMRS radio can legally be keyed by a soundcard modem.</p>
+</div></section>
+
+<section class="section" id="sources"><div class="wrap">
+<h2>Price sources and assumptions</h2>
+<ul>
+<li>Raspberry Pi 5 8 GB: $175 official list in the April 2026 Raspberry Pi 5 product brief; $175 at <a href="https://www.pishop.us/product-category/raspberry-pi/raspberry-pi-5/raspberry-pi-5-boards/">PiShop US</a> (approved reseller), checked 26 November 2026. Raspberry Pi announced further memory-driven price rises in 2026.</li>
+<li>27W USB-C PSU: $12 official (Raspberry Pi, when introducing the $15 45W supply); $12.95 at PiShop US.</li>
+<li>Official Pi 5 case: $10 (Raspberry Pi announcement and official magazine).</li>
+<li>Official 128 GB A2 V30 microSD: $37.95 at PiShop US; the low end of the range is a typical generic A2/V30 card.</li>
+<li>Display, keyboard, mouse, cable, hub, transport case and portable power: typical US street ranges for generic goods, not a specific listing.</li>
+<li>Heltec V3: $17.90–$19.90 on heltec.org (checked against public November 2026 listings); about $25–$27 at US retailers.</li>
+<li>USB u-blox 7 GPS: typical $10–$20 street range for generic “G-mouse” receivers.</li>
+<li>RTL-SDR Blog V3 with dipole kit: $44.95 on rtl-sdr.com; dongle-only often about $35.</li>
+<li>DigiRig Mobile: $54.95 on digirig.net; Mobilinkd TNC4: $149.95 on store.mobilinkd.com. Both are UNVERIFIED examples.</li>
+</ul>
+<p>Assumptions: US retail, one of each line, no tax or shipping, no official T.A.S.K. kit (none is offered here), and a display if you do not already have one — that single line is most of the Starter range. Check off anything you already own.</p>
+<div class="btn-row"><a class="btn" href="download.html">Download the software</a><a class="btn secondary" href="docs.html">Getting started</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="grid cols-3">
+<div><h2>T.A.S.K.</h2><p>Free, offline-first emergency preparedness software for the Raspberry Pi. Free software under the GNU GPL, version 3 or later.</p></div>
+<div><h2>Project</h2><ul>
+<li><a href="https://github.com/TASK-Preparedness/TASK">Source code on GitHub</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/releases/tag/v0.1.0-alpha.1">Release notes (v0.1.0-alpha.1)</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/issues">Issues</a></li>
+<li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
+<div><h2>This site</h2><ul>
+<li><a href="download.html">Download</a></li>
+<li><a href="build.html">Build List</a></li>
+<li><a href="docs.html">Docs</a></li>
+<li><a href="about.html">Safety &amp; license</a></li>
+<li><a href="support.html">Support &amp; contribute</a></li></ul></div>
+</div>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases. The Build List can store which parts you already own in this browser (localStorage) and nowhere else.</p>
+<p class="fine">&copy; 2026 Joshua Sturtz and T.A.S.K. contributors &middot; Free and open source (GPL-3.0-or-later)</p>
+</div></footer>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/build.js" defer></script>
+</body>
+</html>

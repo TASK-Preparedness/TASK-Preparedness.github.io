@@ -42,3 +42,14 @@
     }
   });
 })();
+
+(function () {
+  var menu = document.querySelector('.nav-menu');
+  if (!menu) { return; }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.open) { menu.removeAttribute('open'); }
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { menu.removeAttribute('open'); });
+  });
+})();

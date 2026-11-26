@@ -14,7 +14,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ['index.html', 'download.html', 'docs.html', 'about.html', 'support.html', '404.html']
+PAGES = ['index.html', 'download.html', 'build.html', 'docs.html', 'about.html', 'support.html', '404.html']
 
 
 class P(HTMLParser):
@@ -52,7 +52,7 @@ def main():
         if not p.lang: bad.append(f'{pg}: missing html lang')
         if p.h1 != 1: bad.append(f'{pg}: expected exactly one <h1>, found {p.h1}')
         for r in p.ext_res: bad.append(f'{pg}: external resource {r}')
-        if pg in ('index.html', 'download.html'):
+        if pg in ('index.html', 'download.html', 'build.html'):
             t = (ROOT / pg).read_text()
             for needle in ('READ FIRST', 'NOT VALIDATED ON A PHYSICAL RASPBERRY PI', 'RECEIVE-ONLY BY DEFAULT', 'UNVERIFIED'):
                 if needle not in t: bad.append(f'{pg}: missing warning text {needle!r}')

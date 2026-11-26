@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T.A.S.K. — free, offline-first preparedness software for Raspberry Pi</title>
+<title>T.A.S.K. — when infrastructure fails, stay connected</title>
 <meta name="description" content="Download T.A.S.K. (Tactical Access Support Kit), free GPL software for the Raspberry Pi. Experimental alpha, receive-only by default, not validated on a physical Pi.">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,15 +14,19 @@
 <a class="skip" href="#main">Skip to content</a>
 <div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="index.html" aria-label="T.A.S.K. home"><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></a>
-<nav aria-label="Main"><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="download.html">Download</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support &amp; contribute</a></li></ul></nav>
+<a class="brand" href="index.html" aria-label="T.A.S.K., Tactical Access Support Kit, home"><img src="assets/img/task-mark.svg" width="40" height="40" alt=""><span><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></span></a>
+<nav class="nav-wide" aria-label="Primary"><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="index.html#capabilities">Features</a></li><li><a href="download.html">Download</a></li><li><a href="build.html">Build List</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support</a></li><li><a class="ext" href="https://github.com/TASK-Preparedness/TASK">GitHub</a></li></ul></nav>
+<details class="nav-menu">
+<summary><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span> Menu</summary>
+<nav aria-label="Mobile"><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="index.html#capabilities">Features</a></li><li><a href="download.html">Download</a></li><li><a href="build.html">Build List</a></li><li><a href="docs.html">Docs</a></li><li><a href="about.html">Safety &amp; license</a></li><li><a href="support.html">Support</a></li><li><a class="ext" href="https://github.com/TASK-Preparedness/TASK">GitHub</a></li></ul></nav>
+</details>
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap">
-<span class="tag">Open-source &middot; GPL-3.0-or-later &middot; Raspberry Pi</span>
-<h1>T.A.S.K.</h1>
-<p class="lead"><strong>Tactical Access Support Kit</strong> &mdash; free-of-charge, offline-first emergency preparedness software for the Raspberry Pi.</p>
-<p>T.A.S.K. turns a Raspberry Pi into a field station for emergencies and preparedness: off-grid mesh messaging, offline maps and GPS, amateur/GMRS radio data, a receive-only software-defined radio, and an offline library and medical reference reader &mdash; all usable with no internet connection.</p>
+<span class="tag">Open source &middot; Offline first &middot; Raspberry Pi</span>
+<h1>When infrastructure fails, stay connected.</h1>
+<p class="lead">An integrated emergency preparedness, communications and situational awareness platform for the Raspberry Pi, built to work in a disconnected world.</p>
+<p class="muted">T.A.S.K. (Tactical Access Support Kit) is free-of-charge, offline-first software: mesh messaging, offline maps and GPS, amateur/GMRS radio data, a receive-only software-defined radio, and an offline library and medical reference reader. This public release is an <strong>experimental pre-release</strong>.</p>
 <section class="readfirst" aria-labelledby="readfirst-h" id="read-first">
 <h2 id="readfirst-h">&#9888;&#65039; READ FIRST &mdash; experimental alpha, safety and radio warnings</h2>
 <ul>
@@ -34,21 +38,32 @@
 <p>Read <a href="https://github.com/TASK-Preparedness/TASK/blob/main/SAFETY.md">SAFETY.md</a> and <a href="https://github.com/TASK-Preparedness/TASK/blob/main/KNOWN-ISSUES.md">KNOWN-ISSUES.md</a> before you install anything. See also the <a href="about.html#safety">safety summary on this site</a>.</p>
 </section>
 <div class="btn-row">
-<a class="btn" href="download.html" id="cta-download">Download <span data-rel="tag">v0.1.0-alpha.1</span> (experimental)</a>
-<a class="btn secondary" href="about.html#safety">Safety notes</a>
-<a class="btn secondary" href="https://github.com/TASK-Preparedness/TASK">View source on GitHub</a>
+<a class="btn" href="download.html">Download T.A.S.K.</a>
+<a class="btn secondary" href="#capabilities">Explore features</a>
+<a class="btn secondary" href="build.html">Build List</a>
 </div>
-<p class="muted" style="margin-top:.8rem">Latest release is a <span data-rel="kind">pre-release</span> for volunteer testers and review. Windows is not supported in this alpha.</p>
+<p class="muted" style="margin-top:.8rem">Latest release is a <span data-rel="kind">pre-release</span> for volunteer testers and review (<span data-rel="tag">v0.1.0-alpha.1</span>). Windows is not supported in this alpha.</p>
+<figure class="hero-figure photo-slot">
+<img src="assets/img/launcher-hero.svg" width="960" height="540" alt="Illustration of the T.A.S.K. launcher: a dark dashboard of rounded tiles for Mesh Network, Maps and GPS, Radio and APRS, and the other modules.">
+<figcaption>An illustration of the T.A.S.K. launcher, in the same colours as the program. This slot is reserved for a photograph of a real T.A.S.K. build — please do not replace it with a third-party product photo.</figcaption>
+</figure>
 </div></section>
 
-<section class="section" id="what"><div class="wrap">
-<h2>What is in this alpha</h2>
-<p class="lead">The modules below run daily on the developer&rsquo;s Raspberry Pi 5, and automated tests plus an emulated Debian 13 arm64 chroot have been run on a separate x86_64 build machine. The public packages, installer and source tree have <strong>not</strong> been installed or accepted on a clean physical Raspberry Pi.</p>
-<div class="table-wrap"><table>
-<caption>Module status (from the project&rsquo;s README)</caption>
-<thead><tr><th scope="col">Module</th><th scope="col">What you can do</th><th scope="col">Status</th></tr></thead>
-<tbody><tr><th scope="row">Launcher</th><td>One dashboard for every T.A.S.K. tool, plus Files, System and App Manager</td><td><span class="badge warn">tested on the development Pi; public package experimental</span></td></tr><tr><th scope="row">Mesh Network</th><td>Send and receive Meshtastic messages over a USB node, with desktop and audible alerts</td><td><span class="badge warn">tested on the development Pi; public package experimental</span></td></tr><tr><th scope="row">T.A.S.K. Core</th><td>Device enumeration, ownership, accounts and sessions</td><td><span class="badge warn">tested on the development Pi; public package experimental</span></td></tr><tr><th scope="row">Maps &amp; GPS</th><td>Offline maps (MBTiles you provide), live GPS position, waypoints, tracks, GPX</td><td><span class="badge warn">experimental</span></td></tr><tr><th scope="row">Radio / APRS</th><td>Receive APRS through Direwolf; transmit only when you explicitly choose to</td><td><span class="badge warn">experimental</span></td></tr><tr><th scope="row">SDR Studio</th><td>Receive-only RTL-SDR radio: FM/AM/SSB, spectrum, waterfall, scanner</td><td><span class="badge warn">experimental</span></td></tr><tr><th scope="row">Offline Library &amp; Medical Reader</th><td>Read ZIM (Kiwix), PDF, EPUB and text files offline</td><td><span class="badge warn">experimental</span></td></tr><tr><th scope="row">Devices</th><td>See connected devices and which app owns them</td><td><span class="badge warn">experimental</span></td></tr><tr><th scope="row">Weather</th><td>Shows the status of local weather decoders/data only (no forecasts)</td><td><span class="badge warn">incomplete</span></td></tr><tr><th scope="row">Mission Planner, Firmware Manager, two-way Radio</th><td>Designed, not built</td><td><span class="badge ">planned</span></td></tr><tr><th scope="row">Windows version</th><td>Not built or tested</td><td><span class="badge ">unavailable</span></td></tr></tbody></table></div>
-<p style="margin-top:1rem">What those status words mean, and the full per-module detail, is in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/MODULES.md">MODULES.md</a>. No map, ZIM, medical or firmware content is included &mdash; you supply your own, under each work&rsquo;s own license.</p>
+<section class="section motto-wrap" aria-label="Project promises"><div class="wrap">
+<ul class="motto">
+<li>Offline first</li>
+<li>Open source</li>
+<li>Free of charge</li>
+</ul>
+</div></section>
+
+<section class="section" id="capabilities"><div class="wrap">
+<h2>One platform. Essential capabilities.</h2>
+<p class="lead">These are the tiles in the T.A.S.K. launcher, in the same order, with the status of the public v0.1.0-alpha.1 packages. No module is marked stable. Public packages have not been validated on a physical Raspberry Pi.</p>
+<ul class="tiles">
+<li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6h7M6 8.5v7M18 8.5v7M8.5 18h7"/></svg></span><h3>Mesh Network</h3><p>Send and receive Meshtastic messages over a USB node, with desktop and audible alerts.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2V6z"/><path d="M9 4v14M15 6v14"/></svg></span><h3>Maps &amp; GPS</h3><p>Offline maps (MBTiles you provide), live GPS position, waypoints, tracks and GPX.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v6"/><circle cx="12" cy="13" r="3"/><path d="M7 20h10M5 16c1.5-2 3.5-3 7-3s5.5 1 7 3"/></svg></span><h3>Radio / APRS</h3><p>Receive APRS through Direwolf. Transmit only when you explicitly choose to, and only if you are licensed.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 4 12 2-6h7"/></svg></span><h3>SDR</h3><p>Receive-only RTL-SDR: FM/AM/SSB, spectrum, waterfall and scanner. A physical acceptance test of SDR Studio 0.2.4 is still pending.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19a2 2 0 0 1 2-2h13V4H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13V17"/></svg></span><h3>Library</h3><p>Read ZIM (Kiwix), PDF, EPUB and text files you supply. No library content is included.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile planned"><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 7c6 0 8 4 8 9"/></svg></span><h3>Mission Planner</h3><p>Designed, not built. There is no Mission Planner in this alpha — only a launcher tile marked planned.</p><span class="badge planned">Planned</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.6-7 10-7 10z"/><path d="M8.5 11h2l1-2 1.5 4 1-2h1.5"/></svg></span><h3>Medical</h3><p>Offline medical reference reader for files you supply. Not a diagnosis and not a substitute for a clinician. No medical content is included.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile incomplete"><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17h11a3.5 3.5 0 0 0 .4-7 5 5 0 0 0-9.6-1.2A3.5 3.5 0 0 0 6 17z"/><path d="M17 8.5V8a3 3 0 1 0-5.2-2"/></svg></span><h3>Weather</h3><p>Shows the status of local weather decoders and data only. It does not produce forecasts.</p><span class="badge planned">Incomplete</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18h8v-6H8z"/><path d="M12 12V7"/><path d="M10 9l2-2 2 2"/><path d="M9 18v2h6v-2"/></svg></span><h3>Devices</h3><p>See connected devices and which app owns them.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h6l2 2h10v10H3z"/><path d="M3 7V5h5l2 2"/></svg></span><h3>Files</h3><p>Opens your home folder in the desktop file manager.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><h3>System</h3><p>Host, load, memory, storage, temperature, task-core and network status (read-only).</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li><li class="tile "><article><span class="tile-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>App Manager</h3><p>Apps and tiles: status, enable or disable, and arrange the dashboard.</p><span class="badge warn">Experimental · UNVERIFIED</span></article></li>
+</ul>
+<p class="muted" style="margin-top:1rem">Firmware Manager and a two-way Radio app are designed, not built, and have no launcher tile yet. What the status words mean is in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/MODULES.md">MODULES.md</a>; hardware verification is in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a>. No map, ZIM, medical or firmware content is included — you supply your own, under each work&rsquo;s own license.</p>
 </div></section>
 
 <section class="section alt" id="who"><div class="wrap">
@@ -56,22 +71,19 @@
 <div class="card"><h2>Who this alpha is for</h2>
 <p>Volunteer testing is requested <strong>only</strong> on:</p>
 <ul><li>a <strong>Raspberry Pi 5</strong> running <strong>Debian 13 &ldquo;trixie&rdquo; arm64</strong> (or Raspberry Pi OS 64-bit based on trixie),</li><li>preferably on a <strong>spare SD card</strong>, not a production system.</li></ul>
-<p>Other boards are described in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a> but are not part of this test call. 32-bit operating systems, Debian 12 or older, and Windows are not supported.</p></div>
+<p>Other boards are described in <a href="https://github.com/TASK-Preparedness/TASK/blob/main/HARDWARE.md">HARDWARE.md</a> but are not part of this test call. 32-bit operating systems, Debian 12 or older, and Windows are not supported. For a parts list, see the <a href="build.html">Build List</a>.</p></div>
 <div class="card"><h2>Receive-only by default</h2>
 <p>T.A.S.K. is designed so that nothing transmits on a radio unless you explicitly tell it to.</p>
-<ul><li>SDR Studio is receive-only.</li><li>Radio / APRS transmit stays off until you enter your own licensed callsign and enable it.</li><li>The installer and packages do not flash firmware, change radio configuration, or start anything at boot.</li></ul>
+<ul><li>SDR is receive-only.</li><li>Radio / APRS transmit stays off until you enter your own licensed callsign and enable it.</li><li>The installer and packages do not flash firmware, change radio configuration, or start anything at boot.</li></ul>
 <p>You are responsible for knowing the law where you operate. <a href="about.html#safety">Read the full safety summary.</a></p></div>
 </div></div></section>
 
-<section class="section" id="free"><div class="wrap">
-<h2>Free software, and staying free</h2>
-<p>These are promises from the project maintainer, Joshua Sturtz. They are <strong>not license terms</strong>; your rights to the software come from the GPL.</p>
-<div class="grid cols-3">
-<div class="card"><h3>Free for essential preparedness</h3><p>Essential emergency preparedness features stay free of charge, work fully offline, and need no subscription, account or internet connection.</p></div>
-<div class="card"><h3>No paywalled features</h3><p>There is no paid edition of the essential features, and none is planned. Optional donations never unlock features.</p></div>
-<div class="card"><h3>Source for everything</h3><p>The complete corresponding source is in the public repository, and attached to every release next to the binaries.</p></div>
-</div>
-<div class="btn-row"><a class="btn" href="download.html">Go to downloads</a><a class="btn secondary" href="docs.html">Getting started</a><a class="btn secondary" href="support.html">Support the project</a></div>
+<section class="section band" id="free"><div class="wrap">
+<h2>Preparedness should be accessible to everyone.</h2>
+<p class="lead">No subscriptions. No paid editions. No mandatory donations.</p>
+<p>These are promises from the project maintainer, Joshua Sturtz. They are <strong>not license terms</strong>; your rights to the software come from the GPL. Essential emergency preparedness features stay free of charge, work fully offline, and need no subscription, account or internet connection. Optional donations never unlock features.</p>
+<p>Built for volunteers, radio operators and everyday people.</p>
+<div class="btn-row"><a class="btn" href="download.html">Download T.A.S.K.</a><a class="btn secondary" href="docs.html">Getting started</a><a class="btn secondary" href="support.html">Support the project</a></div>
 </div></section>
 </main>
 <footer class="site-footer"><div class="wrap">
@@ -84,11 +96,13 @@
 <li><a href="https://github.com/TASK-Preparedness/TASK/blob/main/CHANGELOG.md">Changelog</a></li></ul></div>
 <div><h2>This site</h2><ul>
 <li><a href="download.html">Download</a></li>
+<li><a href="build.html">Build List</a></li>
 <li><a href="docs.html">Docs</a></li>
 <li><a href="about.html">Safety &amp; license</a></li>
 <li><a href="support.html">Support &amp; contribute</a></li></ul></div>
 </div>
-<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases.</p>
+<p class="fine">Copyright (C) 2026 Joshua Sturtz and T.A.S.K. contributors. T.A.S.K. is distributed WITHOUT ANY WARRANTY. This site is not legal advice. Meshtastic&reg; is a registered trademark of Meshtastic LLC; T.A.S.K. is not affiliated with, sponsored by or endorsed by Meshtastic LLC, the MeshCore project, Kiwix, Raspberry Pi Ltd or any other project it names. This site has no trackers, no cookies and loads nothing from third parties; the download page makes one request to the GitHub API to check for newer releases. The Build List can store which parts you already own in this browser (localStorage) and nowhere else.</p>
+<p class="fine">&copy; 2026 Joshua Sturtz and T.A.S.K. contributors &middot; Free and open source (GPL-3.0-or-later)</p>
 </div></footer>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/release.js" defer></script>
