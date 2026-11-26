@@ -19,7 +19,7 @@ The circular badge in the header, home hero, favicon, Apple touch icon and socia
 
 The home and Build List pages include a photograph of Joshua Sturtz's T.A.S.K. development station. Published copies have all EXIF and other metadata stripped. A short strip of the display was blurred to hide a local username and hostname in a terminal window title; the photograph is otherwise unedited.
 
-The home page also includes a 30-second landscape promotional video (an AI-generated concept ad, not footage of a validated physical build). Compact 720p H.264 and VP9 versions, with a captions file, sit in `assets/video/`. The hero can play a muted, looping, text-free background cut on wide viewports when the visitor has not requested reduced motion or data saving; otherwise a still poster is shown. The full ad, with sound, is in a separate player further down the page and never autoplays.
+The home page also includes a 30-second landscape promotional video (an AI-generated concept ad, not footage of a validated physical build). Compact 720p H.264 and VP9 versions, with a captions file, sit in `assets/video/`. A muted, looping, text-free background cut is pinned behind the whole home page (`position: fixed`, full viewport) on wide viewports when the visitor has not requested reduced motion or data saving; otherwise a fixed still poster is shown (not `background-attachment: fixed`). Sections and tiles use semi-transparent dark surfaces so text keeps contrast as the page scrolls over the footage. The background video pauses when the full-ad player is playing and when the tab is hidden. The full ad, with sound, is in a separate player further down the page and never autoplays.
 
 ## Pages
 

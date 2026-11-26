@@ -31,8 +31,15 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preload" as="image" href="assets/img/promo-bg-poster.webp" type="image/webp" fetchpriority="high">
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
+<div class="page-bg" aria-hidden="true">
+<picture>
+<source type="image/webp" srcset="assets/img/promo-bg-poster.webp">
+<img class="page-bg-poster" src="assets/img/promo-bg-poster.jpg" width="1280" height="720" alt="" decoding="async" fetchpriority="high">
+</picture>
+<video class="hero-bg-video" muted loop playsinline preload="none" data-webm="assets/video/promo-bg-720.webm" data-mp4="assets/video/promo-bg-720.mp4" hidden></video>
+</div>
 <div class="strip" role="note"><div class="wrap"><strong>Experimental alpha.</strong> Not validated on a physical Raspberry Pi. Receive-only by default. Not a substitute for emergency services. <a href="about.html#safety">Read the safety notes</a>.</div></div>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="index.html" aria-label="T.A.S.K., Tactical Access Support Kit, home"><picture><source type="image/webp" srcset="assets/img/logo-64.webp 64w, assets/img/logo-128.webp 128w" sizes="48px"><img class="brand-logo" src="assets/img/logo-64.png" srcset="assets/img/logo-64.png 64w, assets/img/logo-128.png 128w" sizes="48px" width="48" height="48" alt=""></picture><span><strong>T.A.S.K.</strong><span>Tactical Access Support Kit</span></span></a>
@@ -45,13 +52,6 @@
 <main id="main">
 <section class="hero hero--banner">
 <div class="hero-banner">
-<div class="hero-bg" aria-hidden="true">
-<picture>
-<source type="image/webp" srcset="assets/img/promo-bg-poster.webp">
-<img class="hero-bg-poster" src="assets/img/promo-bg-poster.jpg" width="1280" height="720" alt="" decoding="async" fetchpriority="high">
-</picture>
-<video class="hero-bg-video" muted loop playsinline preload="none" data-webm="assets/video/promo-bg-720.webm" data-mp4="assets/video/promo-bg-720.mp4" hidden></video>
-</div>
 <div class="wrap">
 <picture class="hero-mark"><source type="image/webp" srcset="assets/img/logo-128.webp 128w, assets/img/logo-256.webp 256w, assets/img/logo-512.webp 512w" sizes="8.5rem"><img src="assets/img/logo-256.png" srcset="assets/img/logo-128.png 128w, assets/img/logo-256.png 256w" sizes="8.5rem" width="256" height="256" alt="Official T.A.S.K. logo."></picture>
 <span class="tag">Open source &middot; Offline first &middot; Raspberry Pi</span>
